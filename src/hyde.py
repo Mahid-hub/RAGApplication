@@ -55,27 +55,3 @@ def hyde_search(query, limit=20):
     results = dense_search_with_embedding(hyde_embedding, limit)
     return results
 
-
-if __name__ == "__main__":
-
-    query = "What problems can occur during backup recovery?"
-
-    hypothetical_answer = generate_hypothetical_answer(query)
-
-    print("\nOriginal Query:")
-    print(query)
-
-    print("\nHypothetical Document:")
-    print(hypothetical_answer)
-
-    results = hyde_search(query, limit=5)
-
-    print("\nHyDE Search Results:")
-
-    for i, result in enumerate(results, start=1):
-
-        print(
-            f"{i}. Chunk ID: {result['chunk_id']} | "
-            f"Source: {result['source']} | "
-            f"Score: {result['score']:.4f}"
-        )

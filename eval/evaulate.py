@@ -71,13 +71,6 @@ def evaluate_question(question_data):
     recall_5 = calculate_recall_at_k(retrieved_results, relevant_chunks, k=5)
     recall_10 = calculate_recall_at_k(retrieved_results, relevant_chunks, k=10)
     retrieved_ids = [get_chunk_ids(result) for result in retrieved_results[:10]]
-    print("\nTOP RETRIEVED CHUNKS")
-
-    for result in retrieved_results[:10]:
-        print("-" * 70)
-        print("Chunk ID:", get_chunk_ids(result))
-        print("Source:", result.get("source"))
-        print("Text:", result.get("text", ""))
     
     generation_results = retrieved_results[:5]
     
@@ -269,6 +262,3 @@ def evaluate_main():
 
     with open(output_file, "w", encoding="utf-8") as file:
         json.dump(report, file, indent=4, ensure_ascii=False)
-
-
-evaluate_main()

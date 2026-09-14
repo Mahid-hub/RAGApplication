@@ -94,25 +94,3 @@ def calculate_multi_query_rrf(all_query_results, k=60):
     )
 
     return final_results
-
-# if __name__ == "__main__":
-#     query = "What are the problems with backup recovery?"
-
-#     # Generate 4 queries
-#     queries = generate_queries(query)
-
-#     print("\nGenerated Queries:")
-#     for q in queries:
-#         print(q)
-
-#     # Multi-query search with duplicate removal
-#     all_results = multi_query_search(query)
-
-#     print(f"\nFinal Multi-Query Results: {len(all_results)}")
-
-#     for result in all_results:
-#         print(
-#             f"Chunk ID: {result['chunk_id']} | "
-#             f"Source: {result['source']} | "
-#             f"Rerank Score: {result['rerank_score']:.4f}"
-#         )

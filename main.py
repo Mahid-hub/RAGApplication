@@ -1,5 +1,6 @@
 import os
 import sys
+from openai import OpenAI
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, PROJECT_ROOT)
@@ -12,9 +13,55 @@ from src.generator import generate_answer, build_context
 from eval.faithfulness import evaluate_faithfulness
 from eval.evaulate import evaluate_main
 from src.hyde import hyde_search
+from query_router import route_query
 
 load_dotenv()
 
+client = OpenAI(api_key=os.getenv("GROQ_API_KEY"), base_url="https://api.groq.com/openai/v1")
+
+def run_no_rag(query):
+
+    print("\n" + "-" * 70)
+    print("STEP 2: DIRECT LLM")
+    print("-" * 70)
+
+    response = client.chat.completions.create(
+        model="openai/gpt-oss-20b",
+        messages=[
+            {
+                "role": "system",
+                "content": "Answer the user's question naturally and concisely."
+            },
+            {
+                "role": "user",
+                "content": query
+            }
+        ],
+        temperature=0,
+        reasoning_effort="low",
+        max_completion_tokens=512
+    )
+    answer = response.choices[0].message.content.strip()
+    print(answer)
+    
+
+def run_adaptive_rag(query):
+
+    print("\n" + "-" * 70)
+    print("ADAPTIVE RAG")
+    print("-" * 70)
+    route = route_query(query)
+    print(f"Selected Route: {route}")
+
+    if route == "rag":
+        print("\nUsing Multi-Query RAG...")
+        run_rag(query)
+
+    else:
+        print("\nNo document retrieval required.")
+        run_no_rag(query)
+        
+            
 def run_hyde(query):
 
     print("\n" + "-" * 70)
@@ -34,14 +81,14 @@ def run_hyde(query):
     print("\n" + "-" * 70)
     print("STEP 2: BUILD CONTEXT")
     print("-" * 70)
-    context = build_context(reranked_results)
+    context = build_context(results)
     print("Context successfully created.")
 
 
     print("\n" + "-" * 70)
     print("STEP 3: GENERATE ANSWER")
     print("-" * 70)
-    answer = generate_answer(query, reranked_results)
+    answer = generate_answer(query, results)
     print(answer)
 
 
@@ -124,8 +171,9 @@ def main():
         print("\n1. Index Documents")
         print("2. Run Multi-Query")
         print("3. Run HyDE")
-        print("4. Run Retrieval Evaluation")
-        print("5. Exit")
+        print("4. Run Adaptive RAG")
+        print("5. Run Retrieval Evaluation")
+        print("6. Exit")
 
         choice = input("\nEnter your choice: ").strip()
 
@@ -141,12 +189,16 @@ def main():
             run_hyde(QUERY)
 
         elif choice == "4":
-            run_retrieval_evaluation()
+            QUERY = input("Ask anything: ").strip()
+            run_adaptive_rag(QUERY)
 
         elif choice == "5":
+            run_retrieval_evaluation()
+
+        elif choice == "6":
             print("\nExiting RAG QA System...")
             break
-
+            
         else:
             print("\nInvalid choice. Please select 1, 2, 3, or 4.")
 
