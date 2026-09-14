@@ -1,14 +1,12 @@
 import json
 import sys
 import os
-from unittest import result
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, PROJECT_ROOT)
 sys.path.insert(0, os.path.join(PROJECT_ROOT, "src"))
 
-from src.hybrid_search import hybrid_search
-from src.reranker import rerank_results
+from src.multi_query import multi_query_search
 from src.generator import generate_answer, build_context
 from eval.faithfulness import evaluate_faithfulness
 
@@ -27,7 +25,6 @@ def calculate_recall_at_k(results, relevant_chunks, k):
         chunk_id = get_chunk_ids(result)
         if chunk_id is not None:
             retrieved_ids.add(chunk_id)
-
 
     relevant_ids = {str(chunk_id) for chunk_id in relevant_chunks}
 
@@ -61,17 +58,28 @@ def evaluate_question(question_data):
     question = question_data["question"]
     relevant_chunks = question_data["relevant_chunks"]
     
-    hybrid_results = hybrid_search(question, limit=20)
-    hybrid_recall_5 = calculate_recall_at_k(hybrid_results, relevant_chunks, k=5)
-    hybrid_recall_10 = calculate_recall_at_k(hybrid_results, relevant_chunks, k=10)
-    hybrid_ids = [get_chunk_ids(result) for result in hybrid_results[:10]]
+    retrieved_results = multi_query_search(question)
+
+    # hybrid_recall_5 = calculate_recall_at_k(retrieved_results, relevant_chunks, k=5)
+    # hybrid_recall_10 = calculate_recall_at_k(retrieved_results, relevant_chunks, k=10)
+    # hybrid_ids = [get_chunk_ids(result) for result in retrieved_results[:10]]
     
-    reranked_results = rerank_results(question, hybrid_results, top_k=20)
-    reranker_recall_5 = calculate_recall_at_k(reranked_results, relevant_chunks, k=5)
-    reranker_recall_10 = calculate_recall_at_k(reranked_results, relevant_chunks, k=10)
-    reranked_ids = [get_chunk_ids(result) for result in reranked_results[:10]]
+    # reranker_recall_5 = calculate_recall_at_k(retrieved_results, relevant_chunks, k=5)
+    # reranker_recall_10 = calculate_recall_at_k(retrieved_results, relevant_chunks, k=10)
+    # reranked_ids = [get_chunk_ids(result) for result in retrieved_results[:10]]
     
-    generation_results = reranked_results[:5]
+    recall_5 = calculate_recall_at_k(retrieved_results, relevant_chunks, k=5)
+    recall_10 = calculate_recall_at_k(retrieved_results, relevant_chunks, k=10)
+    retrieved_ids = [get_chunk_ids(result) for result in retrieved_results[:10]]
+    print("\nTOP RETRIEVED CHUNKS")
+
+    for result in retrieved_results[:10]:
+        print("-" * 70)
+        print("Chunk ID:", get_chunk_ids(result))
+        print("Source:", result.get("source"))
+        print("Text:", result.get("text", ""))
+    
+    generation_results = retrieved_results[:5]
     
     context = build_context(generation_results)
     answer = generate_answer(question, generation_results)
@@ -82,19 +90,36 @@ def evaluate_question(question_data):
     print(f"Question: {question}")
     print(f"Relevant chunks: {relevant_chunks}")
     
-    print("\nHybrid Search")
-    print(f"Retrieved: {hybrid_ids}")
-    print(f"Recall@5: {hybrid_recall_5 * 100:.2f}%")
-    print(f"Recall@10: {hybrid_recall_10 * 100:.2f}%")
+    # print("\nHybrid Search")
+    # print(f"Retrieved: {hybrid_ids}")
+    # print(f"Recall@5: {hybrid_recall_5 * 100:.2f}%")
+    # print(f"Recall@10: {hybrid_recall_10 * 100:.2f}%")
 
-    print("\nHybrid + Reranker")
-    print(f"Retrieved: {reranked_ids}")
-    print(f"Recall@5: {reranker_recall_5 * 100:.2f}%")
-    print(f"Recall@10: {reranker_recall_10 * 100:.2f}%")
+    # print("\nHybrid + Reranker")
+    # print(f"Retrieved: {reranked_ids}")
+    # print(f"Recall@5: {reranker_recall_5 * 100:.2f}%")
+    # print(f"Recall@10: {reranker_recall_10 * 100:.2f}%")
+
+    # print("\nLLM Context")
+    # print(f"Chunks sent to generator: {len(generation_results)}")
+    
+    # print("\nGenerated Answer")
+    # print(answer)
+
+    # print("\nFaithfulness")
+    # print(f"Score: {faithfulness['score'] * 100:.2f}%")
+    # print(f"Faithful: {faithfulness['faithful']}")
+    # print(f"Reason: {faithfulness['reason']}")
+    # print("=" * 70)
+    
+    print("\nMulti-Query RAG")
+    print(f"Retrieved: {retrieved_ids}")
+    print(f"Recall@5: {recall_5 * 100:.2f}%")
+    print(f"Recall@10: {recall_10 * 100:.2f}%")
 
     print("\nLLM Context")
     print(f"Chunks sent to generator: {len(generation_results)}")
-    
+
     print("\nGenerated Answer")
     print(answer)
 
@@ -109,18 +134,22 @@ def evaluate_question(question_data):
         "id": question_id,
         "question": question,
         "relevant_chunks": relevant_chunks,
-        "hybrid": {
-            "recall_at_5": hybrid_recall_5,
-            "recall_at_10": hybrid_recall_10,
-            "retrieved_chunks": hybrid_ids
-        },
-        "hybrid_reranker": {
-            "recall_at_5": reranker_recall_5,
-            "recall_at_10": reranker_recall_10,
-            "retrieved_chunks": reranked_ids
+        # "hybrid": {
+        #     "recall_at_5": hybrid_recall_5,
+        #     "recall_at_10": hybrid_recall_10,
+        #     "retrieved_chunks": hybrid_ids
+        # },
+        # "hybrid_reranker": {
+        #     "recall_at_5": reranker_recall_5,
+        #     "recall_at_10": reranker_recall_10,
+        #     "retrieved_chunks": reranked_ids
+        # },
+        "multi_query": {
+            "recall_at_5": recall_5,
+            "recall_at_10": recall_10,
+            "retrieved_chunks": retrieved_ids
         },
         "generation": {
-
             "context_chunks": [get_chunk_ids(result) for result in generation_results],
             "answer": answer
         },
@@ -139,23 +168,33 @@ def evaluate_main():
 
     if len(results) > 0:
 
-        average_hybrid_recall_5 = sum(
-            result["hybrid"]["recall_at_5"]
+        # average_hybrid_recall_5 = sum(
+        #     result["hybrid"]["recall_at_5"]
+        #     for result in results
+        # ) / len(results)
+
+        # average_hybrid_recall_10 = sum(
+        #     result["hybrid"]["recall_at_10"]
+        #     for result in results
+        # ) / len(results)
+
+        # average_reranker_recall_5 = sum(
+        #     result["hybrid_reranker"]["recall_at_5"]
+        #     for result in results
+        # ) / len(results)
+
+        # average_reranker_recall_10 = sum(
+        #     result["hybrid_reranker"]["recall_at_10"]
+        #     for result in results
+        # ) / len(results)
+        
+        average_recall_5 = sum(
+            result["multi_query"]["recall_at_5"]
             for result in results
         ) / len(results)
 
-        average_hybrid_recall_10 = sum(
-            result["hybrid"]["recall_at_10"]
-            for result in results
-        ) / len(results)
-
-        average_reranker_recall_5 = sum(
-            result["hybrid_reranker"]["recall_at_5"]
-            for result in results
-        ) / len(results)
-
-        average_reranker_recall_10 = sum(
-            result["hybrid_reranker"]["recall_at_10"]
+        average_recall_10 = sum(
+            result["multi_query"]["recall_at_10"]
             for result in results
         ) / len(results)
         
@@ -165,10 +204,12 @@ def evaluate_main():
         ) / len(results)
 
     else:
-        average_hybrid_recall_5 = 0.0
-        average_hybrid_recall_10 = 0.0
-        average_reranker_recall_5 = 0.0
-        average_reranker_recall_10 = 0.0
+        # average_hybrid_recall_5 = 0.0
+        # average_hybrid_recall_10 = 0.0
+        # average_reranker_recall_5 = 0.0
+        # average_reranker_recall_10 = 0.0
+        average_recall_5 = 0.0
+        average_recall_10 = 0.0
         average_faithfulness = 0.0
         
     print("\n")
@@ -179,16 +220,21 @@ def evaluate_main():
     print(f"Questions:   {len(results)}")
     print()
     
-    print("Hybrid Search")
-    print(f"Recall@5:    {average_hybrid_recall_5 * 100:.2f}%")
-    print(f"Recall@10:   {average_hybrid_recall_10 * 100:.2f}%")
-    print()
+    # print("Hybrid Search")
+    # print(f"Recall@5:    {average_hybrid_recall_5 * 100:.2f}%")
+    # print(f"Recall@10:   {average_hybrid_recall_10 * 100:.2f}%")
+    # print()
     
-    print("Hybrid + Reranker")
-    print(f"Recall@5:    {average_reranker_recall_5 * 100:.2f}%")
-    print(f"Recall@10:   {average_reranker_recall_10 * 100:.2f}%")
-    print()
+    # print("Hybrid + Reranker")
+    # print(f"Recall@5:    {average_reranker_recall_5 * 100:.2f}%")
+    # print(f"Recall@10:   {average_reranker_recall_10 * 100:.2f}%")
+    # print()
     
+    print("Multi-Query RAG")
+    print(f"Recall@5:    {average_recall_5 * 100:.2f}%")
+    print(f"Recall@10:   {average_recall_10 * 100:.2f}%")
+    print()
+
     print("Generation Evaluation")
     print(f"Faithfulness: {average_faithfulness * 100:.2f}%")
     print("=" * 70)
@@ -197,13 +243,21 @@ def evaluate_main():
 
     report = {
         "total_questions": len(results),
-        "hybrid": {
-            "average_recall_at_5": average_hybrid_recall_5,
-            "average_recall_at_10": average_hybrid_recall_10
-        },
-        "hybrid_reranker": {
-            "average_recall_at_5": average_reranker_recall_5,
-            "average_recall_at_10": average_reranker_recall_10
+        # "hybrid": {
+        #     "average_recall_at_5": average_hybrid_recall_5,
+        #     "average_recall_at_10": average_hybrid_recall_10
+        # },
+        # "hybrid_reranker": {
+        #     "average_recall_at_5": average_reranker_recall_5,
+        #     "average_recall_at_10": average_reranker_recall_10
+        # },
+        "multi_query": {
+
+            "average_recall_at_5":
+                average_recall_5,
+
+            "average_recall_at_10":
+                average_recall_10
         },
         "generation": {
 
@@ -215,3 +269,6 @@ def evaluate_main():
 
     with open(output_file, "w", encoding="utf-8") as file:
         json.dump(report, file, indent=4, ensure_ascii=False)
+
+
+evaluate_main()
