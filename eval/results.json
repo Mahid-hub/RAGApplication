@@ -1,0 +1,1534 @@
+{
+    "total_questions": 37,
+    "hybrid": {
+        "average_recall_at_5": 0.8918918918918919,
+        "average_recall_at_10": 0.918918918918919
+    },
+    "hybrid_reranker": {
+        "average_recall_at_5": 0.9459459459459459,
+        "average_recall_at_10": 0.9459459459459459
+    },
+    "generation": {
+        "average_faithfulness": null
+    },
+    "questions": [
+        {
+            "id": "q01",
+            "question": "Who was on the call but having trouble hearing everyone clearly during the Monday planning meeting?",
+            "relevant_chunks": [
+                "1"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "1",
+                    "4",
+                    "5",
+                    "3",
+                    "23",
+                    "6",
+                    "2",
+                    "21",
+                    "22",
+                    "7"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "1",
+                    "6",
+                    "24",
+                    "25",
+                    "18",
+                    "16",
+                    "12",
+                    "19",
+                    "10",
+                    "3"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q02",
+            "question": "We keep pushing back the cutoff for the old SDK — why can't we just shut it off already?",
+            "relevant_chunks": [
+                "2"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "2",
+                    "7",
+                    "4",
+                    "6",
+                    "5",
+                    "23",
+                    "12",
+                    "3",
+                    "16",
+                    "9"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "2",
+                    "14",
+                    "5",
+                    "7",
+                    "3",
+                    "6",
+                    "20",
+                    "21",
+                    "9",
+                    "4"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q03",
+            "question": "Is anyone tracking down why big spenders can't get their reimbursement requests approved?",
+            "relevant_chunks": [
+                "2"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "4",
+                    "5",
+                    "6",
+                    "2",
+                    "23",
+                    "22",
+                    "9",
+                    "11",
+                    "16",
+                    "13"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "22",
+                    "23",
+                    "2",
+                    "13",
+                    "16",
+                    "19",
+                    "3",
+                    "10",
+                    "1",
+                    "24"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q04",
+            "question": "What finally got the database compaction problem moving again after it stalled for days?",
+            "relevant_chunks": [
+                "3"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "2",
+                    "21",
+                    "3",
+                    "19",
+                    "4",
+                    "6",
+                    "7",
+                    "5",
+                    "12",
+                    "16"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "2",
+                    "3",
+                    "21",
+                    "20",
+                    "5",
+                    "6",
+                    "7",
+                    "18",
+                    "10",
+                    "13"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q05",
+            "question": "Someone mentioned struggling to find old restore steps buried in chat history — did that turn into anything?",
+            "relevant_chunks": [
+                "3"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "3",
+                    "7",
+                    "2",
+                    "16",
+                    "5",
+                    "21",
+                    "4",
+                    "6",
+                    "9",
+                    "23"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "3",
+                    "21",
+                    "17",
+                    "14",
+                    "24",
+                    "12",
+                    "22",
+                    "10",
+                    "25",
+                    "1"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q06",
+            "question": "One of our customers said they lost data without realizing they'd hit a ceiling — what happened there?",
+            "relevant_chunks": [
+                "4"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "4",
+                    "6",
+                    "24",
+                    "2",
+                    "25",
+                    "7",
+                    "5",
+                    "21",
+                    "12",
+                    "3"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "4",
+                    "7",
+                    "14",
+                    "21",
+                    "3",
+                    "2",
+                    "6",
+                    "24",
+                    "20",
+                    "23"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q07",
+            "question": "Is finance going to need staffing numbers from us for a client report soon?",
+            "relevant_chunks": [
+                "5"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "4",
+                    "25",
+                    "5",
+                    "6",
+                    "22",
+                    "24",
+                    "2",
+                    "13",
+                    "9",
+                    "17"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "5",
+                    "4",
+                    "22",
+                    "24",
+                    "6",
+                    "25",
+                    "13",
+                    "23",
+                    "10",
+                    "8"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q08",
+            "question": "Are we planning to drop support for the community-contributed language libraries?",
+            "relevant_chunks": [
+                "5"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "16",
+                    "5",
+                    "1",
+                    "6",
+                    "2",
+                    "19",
+                    "3",
+                    "25",
+                    "4",
+                    "22"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "5",
+                    "2",
+                    "1",
+                    "7",
+                    "6",
+                    "21",
+                    "14",
+                    "19",
+                    "3",
+                    "13"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q09",
+            "question": "If we onboard a much bigger enterprise client, would our current throughput ceiling be a problem?",
+            "relevant_chunks": [
+                "6"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "13",
+                    "6",
+                    "25",
+                    "9",
+                    "24",
+                    "5",
+                    "3",
+                    "2",
+                    "16",
+                    "7"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "6",
+                    "24",
+                    "25",
+                    "13",
+                    "7",
+                    "12",
+                    "2",
+                    "10",
+                    "14",
+                    "16"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q10",
+            "question": "Is it safe for developers to run ingest API tests against the live environment right now?",
+            "relevant_chunks": [
+                "6"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "8",
+                    "2",
+                    "6",
+                    "21",
+                    "18",
+                    "14",
+                    "9",
+                    "7",
+                    "16",
+                    "12"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "2",
+                    "8",
+                    "6",
+                    "18",
+                    "15",
+                    "7",
+                    "9",
+                    "16",
+                    "14",
+                    "11"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q11",
+            "question": "Who's picking up on-call duties while a team member is away next week?",
+            "relevant_chunks": [
+                "6"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "6",
+                    "5",
+                    "1",
+                    "23",
+                    "7",
+                    "10",
+                    "9",
+                    "22",
+                    "12",
+                    "21"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "6",
+                    "5",
+                    "1",
+                    "22",
+                    "16",
+                    "24",
+                    "25",
+                    "17",
+                    "10",
+                    "12"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q12",
+            "question": "Has the outreach to customers still relying on the legacy integration actually gone out yet?",
+            "relevant_chunks": [
+                "7"
+            ],
+            "hybrid": {
+                "recall_at_5": 0.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "2",
+                    "16",
+                    "6",
+                    "5",
+                    "3",
+                    "11",
+                    "4",
+                    "7",
+                    "9",
+                    "21"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "2",
+                    "7",
+                    "6",
+                    "25",
+                    "5",
+                    "10",
+                    "17",
+                    "8",
+                    "12",
+                    "18"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q13",
+            "question": "For a workspace pushing more than a few thousand events a day, is there a better way in than the manual upload screen?",
+            "relevant_chunks": [
+                "8"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "13",
+                    "9",
+                    "8",
+                    "10",
+                    "4",
+                    "21",
+                    "5",
+                    "16",
+                    "19",
+                    "2"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "8",
+                    "14",
+                    "17",
+                    "13",
+                    "9",
+                    "12",
+                    "16",
+                    "10",
+                    "4",
+                    "2"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q14",
+            "question": "If I want to try things out without touching real customer data, is there a safe way to send test traffic?",
+            "relevant_chunks": [
+                "9"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "4",
+                    "3",
+                    "17",
+                    "6",
+                    "9",
+                    "16",
+                    "14",
+                    "7",
+                    "10",
+                    "2"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "11",
+                    "9",
+                    "6",
+                    "14",
+                    "7",
+                    "4",
+                    "2",
+                    "17",
+                    "8",
+                    "18"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q15",
+            "question": "Which pieces of information absolutely must be included when logging an event, versus what's optional?",
+            "relevant_chunks": [
+                "10"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "10",
+                    "9",
+                    "11",
+                    "22",
+                    "5",
+                    "4",
+                    "12",
+                    "16",
+                    "3",
+                    "1"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "10",
+                    "3",
+                    "16",
+                    "17",
+                    "1",
+                    "14",
+                    "4",
+                    "6",
+                    "12",
+                    "9"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q16",
+            "question": "After I send an event, is it available for querying right away or does it take a moment?",
+            "relevant_chunks": [
+                "11"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "10",
+                    "12",
+                    "11",
+                    "17",
+                    "23",
+                    "6",
+                    "5",
+                    "7",
+                    "9",
+                    "16"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "11",
+                    "10",
+                    "17",
+                    "12",
+                    "9",
+                    "8",
+                    "14",
+                    "23",
+                    "16",
+                    "4"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q17",
+            "question": "If my events keep getting rejected for reasons I don't understand, is there a way to check what format is expected?",
+            "relevant_chunks": [
+                "12"
+            ],
+            "hybrid": {
+                "recall_at_5": 0.0,
+                "recall_at_10": 0.0,
+                "retrieved_chunks": [
+                    "4",
+                    "10",
+                    "16",
+                    "18",
+                    "11",
+                    "14",
+                    "17",
+                    "5",
+                    "3",
+                    "9"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "14",
+                    "16",
+                    "12",
+                    "10",
+                    "13",
+                    "11",
+                    "23",
+                    "9",
+                    "17",
+                    "4"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q18",
+            "question": "Can I get rid of a single bad event I accidentally sent without waiting for it to expire naturally?",
+            "relevant_chunks": [
+                "12"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "12",
+                    "10",
+                    "3",
+                    "4",
+                    "16",
+                    "9",
+                    "11",
+                    "6",
+                    "8",
+                    "7"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "10",
+                    "14",
+                    "12",
+                    "22",
+                    "7",
+                    "3",
+                    "4",
+                    "21",
+                    "11",
+                    "19"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q19",
+            "question": "Rather than sending each event the moment it happens, would grouping them together be friendlier to the system?",
+            "relevant_chunks": [
+                "13"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "10",
+                    "12",
+                    "5",
+                    "4",
+                    "13",
+                    "16",
+                    "3",
+                    "9",
+                    "7",
+                    "23"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "10",
+                    "17",
+                    "13",
+                    "16",
+                    "9",
+                    "5",
+                    "1",
+                    "7",
+                    "11",
+                    "12"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q20",
+            "question": "If a request fails with a server-side error, should I just give up on it?",
+            "relevant_chunks": [
+                "14"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "7",
+                    "14",
+                    "16",
+                    "3",
+                    "13",
+                    "12",
+                    "11",
+                    "10",
+                    "9",
+                    "6"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "13",
+                    "9",
+                    "14",
+                    "12",
+                    "20",
+                    "11",
+                    "6",
+                    "3",
+                    "22",
+                    "21"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q21",
+            "question": "I'm building an integration in a language outside the two main ones offered — will I get the same level of support?",
+            "relevant_chunks": [
+                "15"
+            ],
+            "hybrid": {
+                "recall_at_5": 0.0,
+                "recall_at_10": 0.0,
+                "retrieved_chunks": [
+                    "16",
+                    "3",
+                    "9",
+                    "17",
+                    "1",
+                    "6",
+                    "22",
+                    "5",
+                    "7",
+                    "11"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 0.0,
+                "recall_at_10": 0.0,
+                "retrieved_chunks": [
+                    "7",
+                    "16",
+                    "18",
+                    "2",
+                    "14",
+                    "19",
+                    "6",
+                    "23",
+                    "1",
+                    "22"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q22",
+            "question": "My old integration sends a unix timestamp and a field called props — will that still work as-is on the new version?",
+            "relevant_chunks": [
+                "16",
+                "17"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "16",
+                    "7",
+                    "9",
+                    "17",
+                    "2",
+                    "21",
+                    "3",
+                    "5",
+                    "10",
+                    "6"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "17",
+                    "16",
+                    "10",
+                    "11",
+                    "7",
+                    "21",
+                    "2",
+                    "14",
+                    "6",
+                    "15"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q23",
+            "question": "If the written explanations in this API reference seem out of date, who should I flag that to?",
+            "relevant_chunks": [
+                "18"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "16",
+                    "7",
+                    "18",
+                    "3",
+                    "9",
+                    "4",
+                    "14",
+                    "5",
+                    "11",
+                    "2"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "14",
+                    "11",
+                    "18",
+                    "7",
+                    "9",
+                    "6",
+                    "2",
+                    "12",
+                    "16",
+                    "8"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q24",
+            "question": "I want to try this database on my laptop for local development — is that a supported setup?",
+            "relevant_chunks": [
+                "19"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "19",
+                    "6",
+                    "3",
+                    "2",
+                    "21",
+                    "4",
+                    "9",
+                    "16",
+                    "7",
+                    "5"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "19",
+                    "15",
+                    "21",
+                    "6",
+                    "9",
+                    "22",
+                    "2",
+                    "14",
+                    "11",
+                    "18"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q25",
+            "question": "Running the installer inside a container is giving me trouble with system service registration — what should I do?",
+            "relevant_chunks": [
+                "19"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "3",
+                    "16",
+                    "19",
+                    "14",
+                    "6",
+                    "9",
+                    "21",
+                    "2",
+                    "23",
+                    "5"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "19",
+                    "14",
+                    "21",
+                    "9",
+                    "3",
+                    "11",
+                    "6",
+                    "22",
+                    "24",
+                    "10"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q26",
+            "question": "For a small production rollout, roughly how much storage and networking headroom should I plan for?",
+            "relevant_chunks": [
+                "19"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "19",
+                    "3",
+                    "13",
+                    "6",
+                    "22",
+                    "21",
+                    "5",
+                    "24",
+                    "2",
+                    "17"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "19",
+                    "6",
+                    "21",
+                    "2",
+                    "1",
+                    "7",
+                    "3",
+                    "22",
+                    "24",
+                    "13"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q27",
+            "question": "If we want reads to always reflect the latest confirmed write across replicas, is that already the default behavior?",
+            "relevant_chunks": [
+                "20"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "21",
+                    "7",
+                    "20",
+                    "9",
+                    "4",
+                    "3",
+                    "16",
+                    "2",
+                    "10",
+                    "18"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "20",
+                    "7",
+                    "11",
+                    "17",
+                    "19",
+                    "9",
+                    "14",
+                    "16",
+                    "23",
+                    "6"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q28",
+            "question": "Before restoring a snapshot onto our live production cluster, what's the safest first step?",
+            "relevant_chunks": [
+                "21"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "21",
+                    "7",
+                    "19",
+                    "3",
+                    "16",
+                    "9",
+                    "2",
+                    "5",
+                    "18",
+                    "6"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "21",
+                    "20",
+                    "3",
+                    "7",
+                    "19",
+                    "11",
+                    "2",
+                    "9",
+                    "6",
+                    "16"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q29",
+            "question": "Query planning has gotten sluggish lately — is there a quick thing to check before escalating?",
+            "relevant_chunks": [
+                "21"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "2",
+                    "3",
+                    "5",
+                    "7",
+                    "21",
+                    "4",
+                    "6",
+                    "19",
+                    "1",
+                    "16"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "19",
+                    "4",
+                    "21",
+                    "11",
+                    "10",
+                    "25",
+                    "16",
+                    "22",
+                    "14",
+                    "3"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q30",
+            "question": "I just started as a contractor — does the standard remote work reimbursement policy cover me?",
+            "relevant_chunks": [
+                "22"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "22",
+                    "9",
+                    "3",
+                    "23",
+                    "14",
+                    "7",
+                    "4",
+                    "2",
+                    "19",
+                    "6"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "22",
+                    "23",
+                    "6",
+                    "9",
+                    "1",
+                    "10",
+                    "14",
+                    "16",
+                    "18",
+                    "21"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q31",
+            "question": "It's been a couple months since I started and I haven't submitted anything for my desk setup yet — am I too late?",
+            "relevant_chunks": [
+                "22"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "3",
+                    "2",
+                    "22",
+                    "23",
+                    "19",
+                    "13",
+                    "6",
+                    "4",
+                    "9",
+                    "21"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "22",
+                    "2",
+                    "7",
+                    "23",
+                    "3",
+                    "6",
+                    "21",
+                    "14",
+                    "9",
+                    "12"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q32",
+            "question": "I need to travel to headquarters for an in-person meeting — what kind of hotel budget am I working with if it's not a major city?",
+            "relevant_chunks": [
+                "22"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "22",
+                    "4",
+                    "5",
+                    "10",
+                    "3",
+                    "16",
+                    "2",
+                    "6",
+                    "25",
+                    "11"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "22",
+                    "6",
+                    "23",
+                    "13",
+                    "3",
+                    "5",
+                    "8",
+                    "16",
+                    "19",
+                    "9"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q33",
+            "question": "My laptop's screen is too small and I want a second monitor — how do I actually get one?",
+            "relevant_chunks": [
+                "23"
+            ],
+            "hybrid": {
+                "recall_at_5": 0.0,
+                "recall_at_10": 0.0,
+                "retrieved_chunks": [
+                    "3",
+                    "6",
+                    "16",
+                    "2",
+                    "19",
+                    "13",
+                    "22",
+                    "5",
+                    "18",
+                    "9"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 0.0,
+                "recall_at_10": 0.0,
+                "retrieved_chunks": [
+                    "22",
+                    "6",
+                    "10",
+                    "4",
+                    "5",
+                    "25",
+                    "1",
+                    "18",
+                    "13",
+                    "16"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q34",
+            "question": "Investors want to know if the company burned through cash or built up its reserves this quarter — what's the story?",
+            "relevant_chunks": [
+                "24"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "24",
+                    "25",
+                    "4",
+                    "5",
+                    "10",
+                    "23",
+                    "3",
+                    "18",
+                    "2",
+                    "11"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "24",
+                    "25",
+                    "5",
+                    "11",
+                    "4",
+                    "6",
+                    "19",
+                    "9",
+                    "10",
+                    "16"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q35",
+            "question": "Which part of the business is actually carrying the company's growth right now?",
+            "relevant_chunks": [
+                "24"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "24",
+                    "25",
+                    "23",
+                    "5",
+                    "2",
+                    "4",
+                    "6",
+                    "19",
+                    "8",
+                    "10"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "24",
+                    "6",
+                    "22",
+                    "25",
+                    "4",
+                    "2",
+                    "13",
+                    "5",
+                    "7",
+                    "23"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q36",
+            "question": "Should shareholders be worried that deals might start taking longer to close?",
+            "relevant_chunks": [
+                "25"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "25",
+                    "4",
+                    "3",
+                    "2",
+                    "22",
+                    "23",
+                    "5",
+                    "24",
+                    "11",
+                    "7"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "24",
+                    "25",
+                    "6",
+                    "5",
+                    "22",
+                    "14",
+                    "21",
+                    "9",
+                    "12",
+                    "11"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        },
+        {
+            "id": "q37",
+            "question": "Did the company grow its workforce this quarter, and where was most of that growth concentrated?",
+            "relevant_chunks": [
+                "25"
+            ],
+            "hybrid": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "4",
+                    "24",
+                    "25",
+                    "16",
+                    "7",
+                    "23",
+                    "22",
+                    "5",
+                    "13",
+                    "2"
+                ]
+            },
+            "hybrid_reranker": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "24",
+                    "25",
+                    "6",
+                    "4",
+                    "5",
+                    "22",
+                    "23",
+                    "13",
+                    "11",
+                    "7"
+                ]
+            },
+            "answer": null,
+            "faithfulness": null
+        }
+    ]
+}

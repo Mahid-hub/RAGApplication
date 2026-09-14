@@ -1,0 +1,61 @@
+engineering sync notes - dont share outside team pls
+====================================================
+
+9/3 monday standup + planning
+
+attendees: raj, mei, dev (late), sam (remote, bad connection)
+
+- nimbusdb migration is BLOCKED again. compaction job still failing on shard 14, raj
+  looking into it, might be related to the disk io issue from last week?? not sure
+- mei finished the ingest api v2 batching support, in review now (PR #2291)
+- decided: we're pushing the v1 deprecation date back to sept 1 instead of aug 1.
+  too many customers still on old sdk, need more runway
+- ACTION ITEM: dev to email top 12 customers still using v1 by friday
+- ACTION ITEM: raj - shard 14 fix, EOD wednesday hopefully
+- sam mentioned the expense portal thing is still broken for people submitting >$500,
+  approval routing bug, filed as JIRA-4471, low priority for now
+
+random note from raj mid-meeting: "we should really document the backup restore process
+better, nobody remembers the steps and I had to dig through slack history last time"
+-> yes lets do this, added to backlog
+
+---
+
+9/4 tuesday
+
+quick sync, no formal notes taken. main thing: shard 14 issue turned out to be a bad
+disk on worker-node-07, replaced it, compaction running again. mei's PR merged.
+
+customer escalation from Brightfield Analytics (yes the company that uses us for their
+reporting, kind of funny) - they hit the 500 event batch limit and didn't realize it,
+lost some data. need to make that error message way clearer. added JIRA-4472
+
+---
+
+9/5 wed - SKIPPED (all hands)
+
+---
+
+9/8 monday
+
+back to normal schedule.
+
+topics:
+1. Q3 report for brightfield is due end of month, IR team asking for headcount numbers
+2. still need someone to own the backup docs from last week - VOLUNTEERS?? anyone??
+3. discussed whether to sunset the go/ruby/java community sdks. leaning towards
+   keeping them but adding a big warning banner, revisit in Q4
+
+misc / parking lot (unsorted, revisit later):
+* someone asked about rate limit increases for enterprise customers - is 500req/s enough?
+* mei: "can we get a dedicated staging env for the ingest api? testing on prod is scary"
+* dev out next week (vacation), raj covering on-call
+* new hire starts 9/15, need laptop + accounts set up, ping IT
+
+TODO before next sync:
+[ ] raj - write up shard 14 postmortem, even though it was just a hardware issue
+[ ] dev - customer emails (see 9/3 action item, still not done)
+[x] mei - ingest api PR merged
+[ ] someone - backup docs ??? still unowned
+
+end of notes. will clean these up eventually (lol, we say that every time)

@@ -1,0 +1,7 @@
+qdrant-client
+sentence-transformers
+rank-bm25
+pypdf
+python-dotenv
+openai
+numpy

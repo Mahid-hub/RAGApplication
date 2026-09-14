@@ -1,0 +1,187 @@
+[
+  {
+    "id": "q01",
+    "question": "Who was on the call but having trouble hearing everyone clearly during the Monday planning meeting?",
+    "relevant_chunks": ["1"]
+  },
+  {
+    "id": "q02",
+    "question": "We keep pushing back the cutoff for the old SDK — why can't we just shut it off already?",
+    "relevant_chunks": ["2"]
+  },
+  {
+    "id": "q03",
+    "question": "Is anyone tracking down why big spenders can't get their reimbursement requests approved?",
+    "relevant_chunks": ["2"]
+  },
+  {
+    "id": "q04",
+    "question": "What finally got the database compaction problem moving again after it stalled for days?",
+    "relevant_chunks": ["3"]
+  },
+  {
+    "id": "q05",
+    "question": "Someone mentioned struggling to find old restore steps buried in chat history — did that turn into anything?",
+    "relevant_chunks": ["3"]
+  },
+  {
+    "id": "q06",
+    "question": "One of our customers said they lost data without realizing they'd hit a ceiling — what happened there?",
+    "relevant_chunks": ["4"]
+  },
+  {
+    "id": "q07",
+    "question": "Is finance going to need staffing numbers from us for a client report soon?",
+    "relevant_chunks": ["5"]
+  },
+  {
+    "id": "q08",
+    "question": "Are we planning to drop support for the community-contributed language libraries?",
+    "relevant_chunks": ["5"]
+  },
+  {
+    "id": "q09",
+    "question": "If we onboard a much bigger enterprise client, would our current throughput ceiling be a problem?",
+    "relevant_chunks": ["6"]
+  },
+  {
+    "id": "q10",
+    "question": "Is it safe for developers to run ingest API tests against the live environment right now?",
+    "relevant_chunks": ["6"]
+  },
+  {
+    "id": "q11",
+    "question": "Who's picking up on-call duties while a team member is away next week?",
+    "relevant_chunks": ["6"]
+  },
+  {
+    "id": "q12",
+    "question": "Has the outreach to customers still relying on the legacy integration actually gone out yet?",
+    "relevant_chunks": ["7"]
+  },
+  {
+    "id": "q13",
+    "question": "For a workspace pushing more than a few thousand events a day, is there a better way in than the manual upload screen?",
+    "relevant_chunks": ["8"]
+  },
+  {
+    "id": "q14",
+    "question": "If I want to try things out without touching real customer data, is there a safe way to send test traffic?",
+    "relevant_chunks": ["9"]
+  },
+  {
+    "id": "q15",
+    "question": "Which pieces of information absolutely must be included when logging an event, versus what's optional?",
+    "relevant_chunks": ["10"]
+  },
+  {
+    "id": "q16",
+    "question": "After I send an event, is it available for querying right away or does it take a moment?",
+    "relevant_chunks": ["11"]
+  },
+  {
+    "id": "q17",
+    "question": "If my events keep getting rejected for reasons I don't understand, is there a way to check what format is expected?",
+    "relevant_chunks": ["12"]
+  },
+  {
+    "id": "q18",
+    "question": "Can I get rid of a single bad event I accidentally sent without waiting for it to expire naturally?",
+    "relevant_chunks": ["12"]
+  },
+  {
+    "id": "q19",
+    "question": "Rather than sending each event the moment it happens, would grouping them together be friendlier to the system?",
+    "relevant_chunks": ["13"]
+  },
+  {
+    "id": "q20",
+    "question": "If a request fails with a server-side error, should I just give up on it?",
+    "relevant_chunks": ["14"]
+  },
+  {
+    "id": "q21",
+    "question": "I'm building an integration in a language outside the two main ones offered — will I get the same level of support?",
+    "relevant_chunks": ["15"]
+  },
+  {
+    "id": "q22",
+    "question": "My old integration sends a unix timestamp and a field called props — will that still work as-is on the new version?",
+    "relevant_chunks": ["16", "17"]
+  },
+  {
+    "id": "q23",
+    "question": "If the written explanations in this API reference seem out of date, who should I flag that to?",
+    "relevant_chunks": ["18"]
+  },
+  {
+    "id": "q24",
+    "question": "I want to try this database on my laptop for local development — is that a supported setup?",
+    "relevant_chunks": ["19"]
+  },
+  {
+    "id": "q25",
+    "question": "Running the installer inside a container is giving me trouble with system service registration — what should I do?",
+    "relevant_chunks": ["19"]
+  },
+  {
+    "id": "q26",
+    "question": "For a small production rollout, roughly how much storage and networking headroom should I plan for?",
+    "relevant_chunks": ["19"]
+  },
+  {
+    "id": "q27",
+    "question": "If we want reads to always reflect the latest confirmed write across replicas, is that already the default behavior?",
+    "relevant_chunks": ["20"]
+  },
+  {
+    "id": "q28",
+    "question": "Before restoring a snapshot onto our live production cluster, what's the safest first step?",
+    "relevant_chunks": ["21"]
+  },
+  {
+    "id": "q29",
+    "question": "Query planning has gotten sluggish lately — is there a quick thing to check before escalating?",
+    "relevant_chunks": ["21"]
+  },
+  {
+    "id": "q30",
+    "question": "I just started as a contractor — does the standard remote work reimbursement policy cover me?",
+    "relevant_chunks": ["22"]
+  },
+  {
+    "id": "q31",
+    "question": "It's been a couple months since I started and I haven't submitted anything for my desk setup yet — am I too late?",
+    "relevant_chunks": ["22"]
+  },
+  {
+    "id": "q32",
+    "question": "I need to travel to headquarters for an in-person meeting — what kind of hotel budget am I working with if it's not a major city?",
+    "relevant_chunks": ["22"]
+  },
+  {
+    "id": "q33",
+    "question": "My laptop's screen is too small and I want a second monitor — how do I actually get one?",
+    "relevant_chunks": ["23"]
+  },
+  {
+    "id": "q34",
+    "question": "Investors want to know if the company burned through cash or built up its reserves this quarter — what's the story?",
+    "relevant_chunks": ["24"]
+  },
+  {
+    "id": "q35",
+    "question": "Which part of the business is actually carrying the company's growth right now?",
+    "relevant_chunks": ["24"]
+  },
+  {
+    "id": "q36",
+    "question": "Should shareholders be worried that deals might start taking longer to close?",
+    "relevant_chunks": ["25"]
+  },
+  {
+    "id": "q37",
+    "question": "Did the company grow its workforce this quarter, and where was most of that growth concentrated?",
+    "relevant_chunks": ["25"]
+  }
+]
