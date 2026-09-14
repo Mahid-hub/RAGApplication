@@ -1,6 +1,7 @@
 import json
 import sys
 import os
+from unittest import result
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, PROJECT_ROOT)
@@ -23,43 +24,36 @@ def calculate_recall_at_k(results, relevant_chunks, k):
     retrieved_ids = set()
 
     for result in top_results:
-        if isinstance(result, dict):
-            
-            if "chunk_id" in result:
-                retrieved_ids.add(str(result["chunk_id"]))
+        chunk_id = get_chunk_ids(result)
+        if chunk_id is not None:
+            retrieved_ids.add(chunk_id)
 
-            elif "payload" in result:
-                payload = result["payload"]
 
-                if "chunk_id" in payload:
-                    retrieved_ids.add(str(payload["chunk_id"]))
-
-    relevant_ids = set(str(chunk_id) for chunk_id in relevant_chunks)
-    found = retrieved_ids.intersection(relevant_ids)
+    relevant_ids = {str(chunk_id) for chunk_id in relevant_chunks}
 
     if len(relevant_ids) == 0:
         return 0.0
 
-    recall = len(found) / len(relevant_ids)
+    found = (retrieved_ids.intersection(relevant_ids))
+    recall = (len(found)/len(relevant_ids))
+
     return recall
 
 
-def get_chunk_ids(results, k):
-    chunk_ids = []
+def get_chunk_ids(result):
+    if not isinstance(result, dict):
+        return None
+    
+    if "chunk_id" in result:
+        return str(result["chunk_id"])
 
-    for result in results[:k]:
-        if isinstance(result, dict):
+    if "payload" in result:
+        payload = result["payload"]
+        if isinstance(payload, dict):
+            if "chunk_id" in payload:
+                return str(payload["chunk_id"])
 
-            if "chunk_id" in result:
-                chunk_ids.append(str(result["chunk_id"]))
-
-            elif "payload" in result:
-                payload = result["payload"]
-
-                if "chunk_id" in payload:
-                    chunk_ids.append(str(payload["chunk_id"]))
-
-    return chunk_ids
+    return None  
 
 
 def evaluate_question(question_data):
@@ -70,16 +64,17 @@ def evaluate_question(question_data):
     hybrid_results = hybrid_search(question, limit=20)
     hybrid_recall_5 = calculate_recall_at_k(hybrid_results, relevant_chunks, k=5)
     hybrid_recall_10 = calculate_recall_at_k(hybrid_results, relevant_chunks, k=10)
+    hybrid_ids = [get_chunk_ids(result) for result in hybrid_results[:10]]
     
     reranked_results = rerank_results(question, hybrid_results, top_k=20)
     reranker_recall_5 = calculate_recall_at_k(reranked_results, relevant_chunks, k=5)
     reranker_recall_10 = calculate_recall_at_k(reranked_results, relevant_chunks, k=10)
+    reranked_ids = [get_chunk_ids(result) for result in reranked_results[:10]]
     
-    hybrid_ids = get_chunk_ids(hybrid_results, k=10)
-    reranked_ids = get_chunk_ids(reranked_results, k=10)
+    generation_results = reranked_results[:5]
     
-    context = build_context(reranked_results)
-    answer = generate_answer(question, reranked_results)
+    context = build_context(generation_results)
+    answer = generate_answer(question, generation_results)
     faithfulness = evaluate_faithfulness(question, context, answer)
 
     print("\n" + "=" * 70)
@@ -97,11 +92,16 @@ def evaluate_question(question_data):
     print(f"Recall@5: {reranker_recall_5 * 100:.2f}%")
     print(f"Recall@10: {reranker_recall_10 * 100:.2f}%")
 
+    print("\nLLM Context")
+    print(f"Chunks sent to generator: {len(generation_results)}")
+    
     print("\nGenerated Answer")
     print(answer)
 
     print("\nFaithfulness")
     print(f"Score: {faithfulness['score'] * 100:.2f}%")
+    print(f"Faithful: {faithfulness['faithful']}")
+    print(f"Reason: {faithfulness['reason']}")
     print("=" * 70)
 
     return {
@@ -119,7 +119,11 @@ def evaluate_question(question_data):
             "recall_at_10": reranker_recall_10,
             "retrieved_chunks": reranked_ids
         },
-        "answer": answer,
+        "generation": {
+
+            "context_chunks": [get_chunk_ids(result) for result in generation_results],
+            "answer": answer
+        },
         "faithfulness": faithfulness
     }
 
@@ -161,11 +165,11 @@ def evaluate_main():
         ) / len(results)
 
     else:
-        average_hybrid_recall_5 = 0
-        average_hybrid_recall_10 = 0
-        average_reranker_recall_5 = 0
-        average_reranker_recall_10 = 0
-        average_faithfulness = 0
+        average_hybrid_recall_5 = 0.0
+        average_hybrid_recall_10 = 0.0
+        average_reranker_recall_5 = 0.0
+        average_reranker_recall_10 = 0.0
+        average_faithfulness = 0.0
         
     print("\n")
     print("=" * 70)
@@ -211,7 +215,3 @@ def evaluate_main():
 
     with open(output_file, "w", encoding="utf-8") as file:
         json.dump(report, file, indent=4, ensure_ascii=False)
-
-
-if __name__ == "__main__":
-    evaluate_main()

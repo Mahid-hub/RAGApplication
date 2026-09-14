@@ -9,7 +9,7 @@
         "average_recall_at_10": 0.9459459459459459
     },
     "generation": {
-        "average_faithfulness": null
+        "average_faithfulness": 0.9459459459459459
     },
     "questions": [
         {
@@ -50,8 +50,21 @@
                     "3"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "1",
+                    "6",
+                    "24",
+                    "25",
+                    "18"
+                ],
+                "answer": "Sam was on the call but had trouble hearing everyone clearly during the Monday planning meeting. [1]  \n\nSources: [1]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "The answer correctly cites that Sam was on the call and had a bad connection, which implies trouble hearing everyone, as stated in the retrieved context."
+            }
         },
         {
             "id": "q02",
@@ -91,8 +104,21 @@
                     "4"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "2",
+                    "14",
+                    "5",
+                    "7",
+                    "3"
+                ],
+                "answer": "We’re delaying the deprecation because a large number of customers are still using the old SDK, so we need more time to give them a runway to migrate. The team decided to push the v1 deprecation date back to September 1 from August 1 for this reason.  \n\nSources: [1]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "All claims are directly supported by the retrieved context."
+            }
         },
         {
             "id": "q03",
@@ -132,8 +158,21 @@
                     "24"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "22",
+                    "23",
+                    "2",
+                    "13",
+                    "16"
+                ],
+                "answer": "The issue is being tracked in the team’s notes: the expense portal is still broken for people submitting requests over $500, with an approval‑routing bug filed as JIRA‑4471 and marked low priority for now. [3]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "All claims in the answer are directly supported by the provided context."
+            }
         },
         {
             "id": "q04",
@@ -173,8 +212,21 @@
                     "13"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "2",
+                    "3",
+                    "21",
+                    "20",
+                    "5"
+                ],
+                "answer": "The compaction issue stalled because a bad disk on worker‑node‑07 was causing failures. Once that disk was replaced, compaction started running again. [2]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "All claims are directly supported by the provided context."
+            }
         },
         {
             "id": "q05",
@@ -214,8 +266,21 @@
                     "1"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "3",
+                    "21",
+                    "17",
+                    "14",
+                    "24"
+                ],
+                "answer": "I don't have enough information in the provided documents.  \n\nSources: 1"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "The answer correctly states that the provided documents do not contain information about whether the effort to document restore steps resulted in any outcome."
+            }
         },
         {
             "id": "q06",
@@ -255,8 +320,21 @@
                     "23"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "4",
+                    "7",
+                    "14",
+                    "21",
+                    "3"
+                ],
+                "answer": "The customer hit the 500‑event batch limit, which caused some data to be lost because the error message was not clear enough about the ceiling. This was noted in the escalation from Brightfield Analytics and the API documentation lists the 413 error for batches exceeding 500 events or 1 MB payload. [1][3]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "All factual claims are directly supported by the provided context."
+            }
         },
         {
             "id": "q07",
@@ -296,8 +374,21 @@
                     "8"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "5",
+                    "4",
+                    "22",
+                    "24",
+                    "6"
+                ],
+                "answer": "Yes. The IR team is asking for headcount numbers for the Q3 report for Brightfield, which is due at the end of the month.  \n\nSources: [1]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "The answer correctly states that the IR team is requesting headcount numbers for the Q3 Brightfield report due end of month, which directly supports the claim that finance will need staffing numbers soon."
+            }
         },
         {
             "id": "q08",
@@ -337,8 +428,21 @@
                     "13"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "5",
+                    "2",
+                    "1",
+                    "7",
+                    "6"
+                ],
+                "answer": "No. The team discussed possibly sunsetting the community‑contributed Go, Ruby, and Java SDKs, but the current stance is to keep them and add a warning banner, with a revisit planned for Q4. [1]  \n\nSources: [1]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "All claims in the answer are directly supported by the retrieved context."
+            }
         },
         {
             "id": "q09",
@@ -378,8 +482,21 @@
                     "16"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "6",
+                    "24",
+                    "25",
+                    "13",
+                    "7"
+                ],
+                "answer": "The current rate‑limit ceiling for the Enterprise tier is 500 requests per second (with a burst allowance of 1,000). If a larger enterprise client requires a higher sustained throughput than this, the existing limit could become a bottleneck.  \n\nSources: [4]"
+            },
+            "faithfulness": {
+                "faithful": false,
+                "score": 0.5,
+                "reason": "The answer correctly cites the 500 req/s limit from source [4], but the claim that a larger client would face a bottleneck is an inference not directly supported by the provided context."
+            }
         },
         {
             "id": "q10",
@@ -419,8 +536,21 @@
                     "11"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "2",
+                    "8",
+                    "6",
+                    "18",
+                    "15"
+                ],
+                "answer": "I don't have enough information in the provided documents.  \n\nSources: 1, 2, 3, 4, 5"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "The answer correctly states that there is insufficient information in the provided context to determine safety, which is supported by the absence of any relevant detail."
+            }
         },
         {
             "id": "q11",
@@ -460,8 +590,21 @@
                     "12"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "6",
+                    "5",
+                    "1",
+                    "22",
+                    "16"
+                ],
+                "answer": "Raj is covering on‑call duties while the team member is away next week. [1]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "The answer correctly states that Raj is covering on‑call duties while the team member is away next week, which is directly supported by the retrieved context."
+            }
         },
         {
             "id": "q12",
@@ -501,8 +644,21 @@
                     "18"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "2",
+                    "7",
+                    "6",
+                    "25",
+                    "5"
+                ],
+                "answer": "No, the outreach to customers still relying on the legacy integration has not yet been sent. The action item for the developer to email the top 12 customers was still pending as of the latest notes.  \n\nSources: [1], [2]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "All claims are directly supported by the provided context."
+            }
         },
         {
             "id": "q13",
@@ -542,8 +698,21 @@
                     "2"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "8",
+                    "14",
+                    "17",
+                    "13",
+                    "9"
+                ],
+                "answer": "Yes. For workspaces that push more than a few thousand events per day, Brightfield recommends using the **Brightfield Ingest API** instead of the manual upload screen. The API is designed for high‑volume event ingestion and supports batching up to 500 events per request.  \n\nSources: [1]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "All factual claims are directly supported by the provided context."
+            }
         },
         {
             "id": "q14",
@@ -583,8 +752,21 @@
                     "18"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "11",
+                    "9",
+                    "6",
+                    "14",
+                    "7"
+                ],
+                "answer": "Yes. Use a test‑mode API key (prefixed `bf_test_`). These keys write to a sandbox dataset that is cleared every 24 hours, so your test traffic won’t affect real customer data.  \n\nSources: [2]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "All claims are directly supported by the retrieved context."
+            }
         },
         {
             "id": "q15",
@@ -624,8 +806,21 @@
                     "9"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "10",
+                    "3",
+                    "16",
+                    "17",
+                    "1"
+                ],
+                "answer": "The required fields for an event are:\n\n- `event_name` – the name of the event (e.g., `purchase_completed`)【1】  \n- `user_id` – a stable identifier for the actor【1】\n\nAll other fields are optional:\n\n- `timestamp` – defaults to receipt time if omitted【1】  \n- `properties` – arbitrary key/value event metadata【1】\n\nSources: [1]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "All claims are directly supported by the retrieved context."
+            }
         },
         {
             "id": "q16",
@@ -665,8 +860,21 @@
                     "4"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "11",
+                    "10",
+                    "17",
+                    "12",
+                    "9"
+                ],
+                "answer": "After you send an event, it is not immediately available for querying. The event is processed asynchronously and is typically available within about 30 seconds. [1]  \n\nSources: [1]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "All claims are directly supported by the provided context."
+            }
         },
         {
             "id": "q17",
@@ -706,8 +914,21 @@
                     "4"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "14",
+                    "16",
+                    "12",
+                    "10",
+                    "13"
+                ],
+                "answer": "You can inspect the inferred schema for your workspace’s event stream, which shows the expected format and field types. Hit the endpoint that returns the inferred schema (no request body needed, just your API key) to see what the system expects for each event.  \n\nSources: [3]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "The answer correctly cites the inferred schema endpoint described in source [3] as a way to check expected format."
+            }
         },
         {
             "id": "q18",
@@ -747,8 +968,21 @@
                     "19"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "10",
+                    "14",
+                    "12",
+                    "22",
+                    "7"
+                ],
+                "answer": "You can delete a single event only if you are on an Enterprise plan. The API provides a `DELETE /v2/events/{event_id}` endpoint for that purpose, but it is not available on lower‑tier plans.  \n\nSources: [3]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "All factual claims in the answer are directly supported by the retrieved context."
+            }
         },
         {
             "id": "q19",
@@ -788,8 +1022,21 @@
                     "12"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "10",
+                    "17",
+                    "13",
+                    "16",
+                    "9"
+                ],
+                "answer": "Yes. The API documentation recommends client‑side batching—sending up to 500 events in a single request—rather than firing individual requests for each event. This reduces the number of HTTP calls and helps avoid exceeding rate limits.  \n\nSources: [1], [3]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "All claims are directly supported by the provided context."
+            }
         },
         {
             "id": "q20",
@@ -829,8 +1076,21 @@
                     "21"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "13",
+                    "9",
+                    "14",
+                    "12",
+                    "20"
+                ],
+                "answer": "No. A server‑side error (5xx) is considered transient; you should retry the request with exponential backoff. This is explicitly recommended in the error‑code documentation.  \n\nSources: [3]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "The answer correctly states that 5xx errors are safe to retry with exponential backoff, which is directly supported by source [3]."
+            }
         },
         {
             "id": "q21",
@@ -870,8 +1130,21 @@
                     "22"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "7",
+                    "16",
+                    "18",
+                    "2",
+                    "14"
+                ],
+                "answer": "I don't have enough information in the provided documents.  \n\nSources: None"
+            },
+            "faithfulness": {
+                "faithful": false,
+                "score": 0.0,
+                "reason": "The answer claims lack of information, but the context does not provide any information about language support, so the claim is unsupported."
+            }
         },
         {
             "id": "q22",
@@ -912,8 +1185,21 @@
                     "15"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "17",
+                    "16",
+                    "10",
+                    "11",
+                    "7"
+                ],
+                "answer": "No. The v2 endpoint expects an ISO 8601 `timestamp` and a `properties` field instead of the old `props` field. The old Unix‑epoch timestamp and `props` key will not be accepted without modification.  \n\nSources: [1], [3]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "All claims are directly supported by the provided context."
+            }
         },
         {
             "id": "q23",
@@ -953,8 +1239,21 @@
                     "8"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "14",
+                    "11",
+                    "18",
+                    "7",
+                    "9"
+                ],
+                "answer": "If the explanations in the API reference appear out of date, you should flag them by posting in the `#ingest-api-support` channel or by emailing `platform-team@brightfieldanalytics.example`.【3】\n\nSources: [3]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "The answer directly cites the instruction from source [3] that says to post in #ingest-api-support or email platform-team@brightfieldanalytics.example when the documentation is out of date."
+            }
         },
         {
             "id": "q24",
@@ -994,8 +1293,21 @@
                     "18"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "19",
+                    "15",
+                    "21",
+                    "6",
+                    "9"
+                ],
+                "answer": "NimbusDB supports macOS for local development only, but it is not recommended for production use. [1]  \n\nSources: [1]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "The answer accurately reflects the statement in the retrieved context that macOS is supported only for local development and not recommended for production."
+            }
         },
         {
             "id": "q25",
@@ -1035,8 +1347,21 @@
                     "10"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "19",
+                    "14",
+                    "21",
+                    "9",
+                    "3"
+                ],
+                "answer": "Run the installer with the `--no-systemd` flag to skip system‑service registration when installing inside a container. This option prevents the installer from attempting to create the NimbusDB system user and register the systemd service, which is not applicable in a containerized environment. [1]  \n\nSources: [1]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "The answer directly cites the context that specifies using --no-systemd when installing in a container to skip systemd registration."
+            }
         },
         {
             "id": "q26",
@@ -1076,8 +1401,21 @@
                     "13"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "19",
+                    "6",
+                    "21",
+                    "2",
+                    "1"
+                ],
+                "answer": "For a small production rollout you should plan for roughly **500 GB of SSD storage** and **10 Gbps of network bandwidth** as headroom.  \n\nSources: [1]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "All factual claims are directly supported by the retrieved context."
+            }
         },
         {
             "id": "q27",
@@ -1117,8 +1455,21 @@
                     "6"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "20",
+                    "7",
+                    "11",
+                    "17",
+                    "19"
+                ],
+                "answer": "No. The default setting for `cluster.quorum_reads` is `false`, meaning reads do not require a majority acknowledgment and therefore do not guarantee that they always reflect the latest confirmed write across replicas.  \n\nSources: [1]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "The answer correctly states that the default for cluster.quorum_reads is false, as shown in the provided context, and explains that this means reads do not guarantee the latest write across replicas."
+            }
         },
         {
             "id": "q28",
@@ -1158,8 +1509,21 @@
                     "16"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "21",
+                    "20",
+                    "3",
+                    "7",
+                    "19"
+                ],
+                "answer": "The safest first step is to restore the snapshot to a scratch (non‑production) cluster and verify the data integrity before promoting it to the live production cluster. This prevents accidental overwriting of existing data on the production cluster.  \n\nSources: [1]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "The answer directly quotes the guidance from the retrieved context that advises restoring to a scratch cluster first and verifying data integrity before promoting to production."
+            }
         },
         {
             "id": "q29",
@@ -1199,8 +1563,21 @@
                     "3"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "19",
+                    "4",
+                    "21",
+                    "11",
+                    "10"
+                ],
+                "answer": "Run a quick statistics refresh on the affected tables.  \nThe guide lists stale statistics as a common cause of slow query planning and recommends executing  \n\n```\nnimbusctl analyze <table>\n```\n\nto update the planner’s metadata before escalating the issue.  \n\nSources: [3]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "All claims are directly supported by the retrieved context."
+            }
         },
         {
             "id": "q30",
@@ -1240,8 +1617,21 @@
                     "21"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "22",
+                    "23",
+                    "6",
+                    "9",
+                    "1"
+                ],
+                "answer": "The standard remote work reimbursement policy does not apply to contractors. The policy explicitly states that it is for full‑time employees classified as remote or hybrid and that contractors are not covered unless otherwise stated in their individual agreements. [1]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "All claims are directly supported by the provided context."
+            }
         },
         {
             "id": "q31",
@@ -1281,8 +1671,21 @@
                     "12"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "22",
+                    "2",
+                    "7",
+                    "23",
+                    "3"
+                ],
+                "answer": "You must claim the one‑time $500 desk/chair stipend within 90 days of your start date; after that it expires and no reimbursement will be issued. If you are still within that 90‑day window you can submit the claim, otherwise you are too late.  \n\nSources: [1]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "All factual claims in the answer are directly supported by the retrieved context."
+            }
         },
         {
             "id": "q32",
@@ -1322,8 +1725,21 @@
                     "9"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "22",
+                    "6",
+                    "23",
+                    "13",
+                    "3"
+                ],
+                "answer": "For a non‑major city, the policy allows reimbursement for a standard hotel room up to **$160 per night**.  \n\nSources: [1]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "The answer correctly cites the policy’s stated hotel reimbursement limits: $220/night in major metros and $160/night elsewhere, matching the claim for a non‑major city."
+            }
         },
         {
             "id": "q33",
@@ -1363,8 +1779,21 @@
                     "16"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "22",
+                    "6",
+                    "10",
+                    "4",
+                    "5"
+                ],
+                "answer": "To get a second monitor, file a request through the company’s IT system (or IT help‑desk) for the additional equipment. This is the procedure outlined in the Remote Work & Expense Policy.  \n\nSources: [1]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "The answer correctly states that employees needing a second monitor should file a request through IT, which is directly supported by the policy text in source [1]."
+            }
         },
         {
             "id": "q34",
@@ -1404,8 +1833,21 @@
                     "16"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "24",
+                    "25",
+                    "5",
+                    "11",
+                    "4"
+                ],
+                "answer": "Brightfield Analytics ended Q3 2025 with $112 million in cash and equivalents, up 16 % from the $96.4 million reported at the end of Q2 2025. This increase indicates that the company built up its cash reserves rather than burning through cash during the quarter.  \n\nSources: [1]"
+            },
+            "faithfulness": {
+                "faithful": false,
+                "score": 0.5,
+                "reason": "The answer correctly states the cash balance for Q3 2025 and the increase percentage, but it incorrectly references the prior period as Q2 2025 instead of Q3 2024, which is what the context provides."
+            }
         },
         {
             "id": "q35",
@@ -1445,8 +1887,21 @@
                     "23"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "24",
+                    "6",
+                    "22",
+                    "25",
+                    "4"
+                ],
+                "answer": "The growth is being driven by the **Enterprise Data Platform** segment, which contributed $31.4 M of quarterly revenue—65 % of total revenue and up 4 % QoQ.  \n\nSources: [1]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "All factual claims are directly supported by the provided context."
+            }
         },
         {
             "id": "q36",
@@ -1486,8 +1941,21 @@
                     "11"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "24",
+                    "25",
+                    "6",
+                    "5",
+                    "22"
+                ],
+                "answer": "Yes.  Management notes that macro‑economic uncertainty could lengthen average deal times in Q4, which may affect the timing of revenue recognition and pipeline conversion.  This is highlighted as a risk factor in the Q3 report.  [2]  \n\nSources: [2]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "All factual claims are directly supported by the retrieved context."
+            }
         },
         {
             "id": "q37",
@@ -1527,8 +1995,21 @@
                     "7"
                 ]
             },
-            "answer": null,
-            "faithfulness": null
+            "generation": {
+                "context_chunks": [
+                    "24",
+                    "25",
+                    "6",
+                    "4",
+                    "5"
+                ],
+                "answer": "Yes. Brightfield Analytics increased its workforce from 388 employees in Q2 2025 to 412 at the end of Q3 2025, a net addition of 24 people. The majority of those new hires were in Engineering and Product functions, reflecting continued investment in platform reliability and new data‑connector integrations. [2]  \n\nSources: [2]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "All factual claims are directly supported by the retrieved context."
+            }
         }
     ]
 }

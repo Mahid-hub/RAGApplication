@@ -9,74 +9,88 @@ client = OpenAI(api_key=os.getenv("GROQ_API_KEY"), base_url="https://api.groq.co
 
 def evaluate_faithfulness(question, context, answer):
 
-    prompt = f"""
-                You are a strict faithfulness evaluator for a RAG system.
+    context = context[:7000]
+    answer = answer[:2500]
 
-                Your job is to determine whether the GENERATED ANSWER
-                is fully supported by the RETRIEVED CONTEXT.
+    system_prompt = """
+                    You are a strict RAG faithfulness evaluator.
+                    Judge ONLY whether the generated answer is supported by the retrieved context.
+                    Do not use outside knowledge.
 
-                IMPORTANT RULES:
-                1. Use ONLY the provided context.
-                2. Do NOT use outside knowledge.
-                3. Check every factual claim in the generated answer.
-                4. If a claim is not supported by the context, mark the answer as unfaithful.
-                5. Do not judge whether the answer is well-written.
-                6. Only judge whether the answer is supported by the context.
-                7. Return ONLY valid JSON.
-                8. Do not use markdown code blocks.
+                    Important:
+                    - If the answer correctly says that the requested information is not
+                    available in the provided context, consider it faithful.
+                    - A refusal such as "I don't have enough information in the provided
+                    documents" is faithful when the context does not provide the requested
+                    information.
+                    - Do not penalize an answer simply because it does not answer the question,
+                    as long as the refusal is appropriate based on the context.
 
-                Return exactly this format:
+                    Score:
+                    1.0 = all claims are supported or the refusal is appropriate
+                    0.5 = partially supported
+                    0.0 = unsupported or hallucinated
 
-                {{
-                    "faithful": true,
-                    "score": 1.0,
-                    "reason": "All factual claims in the answer are supported by the context."
-                }}
+                    Rules:
+                    - If score is 1.0, faithful MUST be true.
+                    - If score is less than 1.0, faithful MUST be false.
+                    - The faithful field must always match the score.
 
-                The score must be between 0.0 and 1.0.
+                    Return valid JSON only.
+                    Keep the reason short.
+                """
 
-                QUESTION:
-                {question}
+    user_prompt = f"""
+                    QUESTION:
+                    {question}
 
-                RETRIEVED CONTEXT:
-                {context}
+                    CONTEXT:
+                    {context}
 
-                GENERATED ANSWER:
-                {answer}
-            """
-
-    response = client.chat.completions.create(
-        model="openai/gpt-oss-20b",
-        messages=[
-            {
-                "role": "system",
-                "content": (
-                    "You are a strict RAG faithfulness evaluator. "
-                    "Evaluate answers only against the provided context. "
-                    "Return only valid JSON."
-                )
-            },
-            {
-                "role": "user",
-                "content": prompt
-            }
-        ],
-        temperature=0
-    )
-    result_text = response.choices[0].message.content.strip()
+                    ANSWER:
+                    {answer}
+                """
 
     try:
+        response = client.chat.completions.create(
+            model="openai/gpt-oss-20b",
+            messages=[
+                {
+                    "role": "system",
+                    "content": system_prompt
+                },
+                {
+                    "role": "user",
+                    "content": user_prompt
+                }
+            ],
+            temperature=0,
+            reasoning_effort="low",
+            # include_reasoning=False,
+            max_completion_tokens=256,
+            response_format={
+                "type": "json_object"
+            }
+        )
+
+        result_text = response.choices[0].message.content.strip()
         result = json.loads(result_text)
+        score = float(result.get("score", 0.0))
+        score = max(0.0, min(1.0, score))
+
+        faithful = score >= 1.0
 
         return {
-            "faithful": bool(result["faithful"]),
-            "score": float(result["score"]),
-            "reason": result["reason"]
+            "faithful": faithful,
+            "score": score,
+            "reason": str(result.get("reason", "No reason provided."))
         }
 
-    except (json.JSONDecodeError, KeyError, TypeError, ValueError):
+    except Exception as error:
+        print(f"\nFaithfulness evaluation failed: {error}")
+
         return {
             "faithful": False,
             "score": 0.0,
-            "reason": "The evaluator returned an invalid response."
+            "reason": "Faithfulness evaluator failed."
         }
