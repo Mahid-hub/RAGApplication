@@ -25,17 +25,19 @@ def index_documents():
     chunk_size = int(os.getenv("chunk-size"))
     documents = load_documents("data/raw")
 
-    if not client.collection_exists(collection_name=collection_name):
-        client.create_collection(
-            collection_name=collection_name,
-            vectors_config=VectorParams(
-                size=384,
-                distance=Distance.COSINE
-            )
-        )
-        print(f"Collection '{collection_name}' created.")
-    else:
+    if client.collection_exists(collection_name=collection_name):
         print(f"Collection '{collection_name}' already exists.")
+        print("Deleting old collection for clean re-indexing...")
+        client.delete_collection(collection_name=collection_name)
+
+    client.create_collection(
+        collection_name=collection_name,
+        vectors_config=VectorParams(
+            size=384,
+            distance=Distance.COSINE
+        )
+    )
+    print(f"Collection '{collection_name}' created.")
 
     point_number = 1
     for doc in documents:

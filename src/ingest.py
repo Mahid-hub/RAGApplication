@@ -1,5 +1,7 @@
 from pathlib import Path
-from pypdf import PdfReader
+from docling.document_converter import DocumentConverter
+
+converter = DocumentConverter()
 
 def load_documents(path):
     data = Path(path)
@@ -8,10 +10,10 @@ def load_documents(path):
 
     for file in files:
         if file.suffix == '.pdf':
-            reader = PdfReader(file)
-            text = "\n".join(page.extract_text() or "" for page in reader.pages)
-            meta = reader.metadata or {}
-            title = meta.title if meta and meta.title else file.stem
+            result = converter.convert(file)
+            text = result.document.export_to_markdown()
+            title = file.stem
+            
         else:
             text = file.read_text()
             title = file.stem

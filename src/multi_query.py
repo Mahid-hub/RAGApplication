@@ -42,7 +42,6 @@ def generate_queries(query):
         reasoning_effort="low",
         max_completion_tokens=512
     )
-
     result = response.choices[0].message.content
 
     queries = [
@@ -82,7 +81,6 @@ def calculate_multi_query_rrf(all_query_results, k=60):
             scores[chunk_id] += 1 / (k + rank)
 
     final_results = []
-
     for chunk_id, score in scores.items():
         result = result_map[chunk_id].copy()
         result["multi_query_rrf_score"] = score

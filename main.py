@@ -77,13 +77,11 @@ def run_hyde(query):
             f"Score: {result['score']:.4f}"
         )
         
-
     print("\n" + "-" * 70)
     print("STEP 2: BUILD CONTEXT")
     print("-" * 70)
     context = build_context(results)
     print("Context successfully created.")
-
 
     print("\n" + "-" * 70)
     print("STEP 3: GENERATE ANSWER")
@@ -91,13 +89,11 @@ def run_hyde(query):
     answer = generate_answer(query, results)
     print(answer)
 
-
     print("\n" + "-" * 70)
     print("STEP 4: FAITHFULNESS EVALUATION")
     print("-" * 70)
-
-    faithfulness = evaluate_faithfulness(query, context, answer)
     
+    faithfulness = evaluate_faithfulness(query, context, answer)
     print(f"\nFaithful: {faithfulness['faithful']}")
     print(f"Score:    {faithfulness['score']}")
     print(f"Reason:   {faithfulness['reason']}")
@@ -108,25 +104,17 @@ def run_rag(query):
     print("\n" + "-" * 70)
     print("STEP 1: MULTI-QUERY RETRIEVAL")
     print("-" * 70)
-
     reranked_results = multi_query_search(query)
-
     print(f"Final retrieved results: {len(reranked_results)}")
 
     for i, result in enumerate(reranked_results, start=1):
-        print(
-            f"{i}. Chunk ID: {result['chunk_id']} | "
-            f"Source: {result['source']} | "
-            f"Rerank Score: {result['rerank_score']:.4f}"
-    )
-        
-
+        print(f"{i}. Chunk ID: {result['chunk_id']} | Source: {result['source']} | Rerank Score: {result['rerank_score']:.4f}")
+    
     print("\n" + "-" * 70)
     print("STEP 2: BUILD CONTEXT")
     print("-" * 70)
     context = build_context(reranked_results)
     print("Context successfully created.")
-
 
     print("\n" + "-" * 70)
     print("STEP 3: GENERATE ANSWER")
@@ -134,13 +122,11 @@ def run_rag(query):
     answer = generate_answer(query, reranked_results)
     print(answer)
 
-
     print("\n" + "-" * 70)
     print("STEP 4: FAITHFULNESS EVALUATION")
     print("-" * 70)
 
-    faithfulness = evaluate_faithfulness(query, context, answer)
-    
+    faithfulness = evaluate_faithfulness(query, context, answer)    
     print(f"\nFaithful: {faithfulness['faithful']}")
     print(f"Score:    {faithfulness['score']}")
     print(f"Reason:   {faithfulness['reason']}")
@@ -181,11 +167,11 @@ def main():
             run_indexing()
 
         elif choice == "2":
-            QUERY = input("Ask anything related to documents: ").strip()
+            QUERY = input("Ask anything: ").strip()
             run_rag(QUERY)
 
         elif choice == "3":
-            QUERY = input("Ask anything related to documents: ").strip()
+            QUERY = input("Ask anything: ").strip()
             run_hyde(QUERY)
 
         elif choice == "4":
@@ -200,7 +186,7 @@ def main():
             break
             
         else:
-            print("\nInvalid choice. Please select 1, 2, 3, or 4.")
+            print("\nInvalid choice. Please select 1, 2, 3, 4, 5 or 6.")
 
 if __name__ == "__main__":
     main()

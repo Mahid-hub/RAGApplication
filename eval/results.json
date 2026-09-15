@@ -1,15 +1,11 @@
 {
     "total_questions": 37,
-    "hybrid": {
-        "average_recall_at_5": 0.8918918918918919,
-        "average_recall_at_10": 0.918918918918919
-    },
-    "hybrid_reranker": {
-        "average_recall_at_5": 0.9459459459459459,
-        "average_recall_at_10": 0.9459459459459459
+    "multi_query": {
+        "average_recall_at_5": 0.927927927927928,
+        "average_recall_at_10": 0.981981981981982
     },
     "generation": {
-        "average_faithfulness": 0.9459459459459459
+        "average_faithfulness": 1.0
     },
     "questions": [
         {
@@ -18,52 +14,36 @@
             "relevant_chunks": [
                 "1"
             ],
-            "hybrid": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "1",
-                    "4",
-                    "5",
-                    "3",
-                    "23",
-                    "6",
-                    "2",
-                    "21",
-                    "22",
-                    "7"
-                ]
-            },
-            "hybrid_reranker": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
                     "1",
                     "6",
-                    "24",
-                    "25",
+                    "37",
+                    "8",
+                    "42",
                     "18",
-                    "16",
-                    "12",
-                    "19",
-                    "10",
-                    "3"
+                    "20",
+                    "41",
+                    "34",
+                    "15"
                 ]
             },
             "generation": {
                 "context_chunks": [
                     "1",
                     "6",
-                    "24",
-                    "25",
-                    "18"
+                    "37",
+                    "8",
+                    "42"
                 ],
-                "answer": "Sam was on the call but had trouble hearing everyone clearly during the Monday planning meeting. [1]  \n\nSources: [1]"
+                "answer": "Sam was on the call but had trouble hearing everyone clearly during the Monday planning meeting.  \n\nSources: [1]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "The answer correctly cites that Sam was on the call and had a bad connection, which implies trouble hearing everyone, as stated in the retrieved context."
+                "reason": "The answer correctly states that Sam was on the call and had trouble hearing everyone, which is supported by source [1] indicating Sam had a bad connection."
             }
         },
         {
@@ -72,52 +52,36 @@
             "relevant_chunks": [
                 "2"
             ],
-            "hybrid": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "2",
-                    "7",
-                    "4",
-                    "6",
-                    "5",
-                    "23",
-                    "12",
-                    "3",
-                    "16",
-                    "9"
-                ]
-            },
-            "hybrid_reranker": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
                     "2",
                     "14",
+                    "15",
                     "5",
                     "7",
                     "3",
                     "6",
-                    "20",
-                    "21",
-                    "9",
-                    "4"
+                    "25",
+                    "27",
+                    "9"
                 ]
             },
             "generation": {
                 "context_chunks": [
                     "2",
                     "14",
+                    "15",
                     "5",
-                    "7",
-                    "3"
+                    "7"
                 ],
-                "answer": "We’re delaying the deprecation because a large number of customers are still using the old SDK, so we need more time to give them a runway to migrate. The team decided to push the v1 deprecation date back to September 1 from August 1 for this reason.  \n\nSources: [1]"
+                "answer": "We’re delaying the deprecation because a large number of customers are still using the old SDK, so we need more time to give them a runway to migrate. The team decided to push the v1 deprecation date back to September 1 instead of August 1 for this reason. [1]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "All claims are directly supported by the retrieved context."
+                "reason": "The answer correctly states that the deprecation date was pushed back to September 1 because many customers still use the old SDK, which is directly supported by the provided context in SOURCE [1]."
             }
         },
         {
@@ -126,52 +90,36 @@
             "relevant_chunks": [
                 "2"
             ],
-            "hybrid": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
-                    "4",
-                    "5",
-                    "6",
-                    "2",
-                    "23",
-                    "22",
-                    "9",
-                    "11",
-                    "16",
-                    "13"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "22",
-                    "23",
+                    "32",
+                    "31",
+                    "29",
+                    "33",
                     "2",
                     "13",
+                    "34",
+                    "21",
                     "16",
-                    "19",
-                    "3",
-                    "10",
-                    "1",
-                    "24"
+                    "20"
                 ]
             },
             "generation": {
                 "context_chunks": [
-                    "22",
-                    "23",
-                    "2",
-                    "13",
-                    "16"
+                    "32",
+                    "31",
+                    "29",
+                    "33",
+                    "2"
                 ],
-                "answer": "The issue is being tracked in the team’s notes: the expense portal is still broken for people submitting requests over $500, with an approval‑routing bug filed as JIRA‑4471 and marked low priority for now. [3]"
+                "answer": "Yes.  Raj is working on fixing the shard 14 issue that is blocking the expense portal, and Sam has reported that the portal is still broken for submissions over $500, which is preventing large reimbursements from being approved. [5]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "All claims in the answer are directly supported by the provided context."
+                "reason": "The answer cites source5, which explicitly states that Sam reported the expense portal is broken for submissions over $500 and that Raj is working on a related issue, indicating that someone is tracking the problem."
             }
         },
         {
@@ -180,106 +128,76 @@
             "relevant_chunks": [
                 "3"
             ],
-            "hybrid": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "2",
-                    "21",
-                    "3",
-                    "19",
-                    "4",
-                    "6",
-                    "7",
-                    "5",
-                    "12",
-                    "16"
-                ]
-            },
-            "hybrid_reranker": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
                     "2",
                     "3",
-                    "21",
-                    "20",
+                    "27",
+                    "24",
                     "5",
+                    "28",
                     "6",
                     "7",
-                    "18",
-                    "10",
-                    "13"
+                    "25",
+                    "8"
                 ]
             },
             "generation": {
                 "context_chunks": [
                     "2",
                     "3",
-                    "21",
-                    "20",
+                    "27",
+                    "24",
                     "5"
                 ],
-                "answer": "The compaction issue stalled because a bad disk on worker‑node‑07 was causing failures. Once that disk was replaced, compaction started running again. [2]"
+                "answer": "The compaction problem resumed after the bad disk on worker‑node‑07 was replaced and compaction started running again. [2] Sources: 2"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "All claims are directly supported by the provided context."
+                "reason": "The answer accurately reflects the information in the provided context."
             }
         },
         {
             "id": "q05",
             "question": "Someone mentioned struggling to find old restore steps buried in chat history — did that turn into anything?",
             "relevant_chunks": [
-                "3"
+                "3",
+                "5",
+                "7"
             ],
-            "hybrid": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
+            "multi_query": {
+                "recall_at_5": 0.3333333333333333,
+                "recall_at_10": 0.3333333333333333,
                 "retrieved_chunks": [
                     "3",
-                    "7",
-                    "2",
-                    "16",
-                    "5",
-                    "21",
-                    "4",
-                    "6",
-                    "9",
-                    "23"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "3",
-                    "21",
-                    "17",
-                    "14",
-                    "24",
-                    "12",
-                    "22",
-                    "10",
                     "25",
-                    "1"
+                    "34",
+                    "17",
+                    "20",
+                    "14",
+                    "21",
+                    "42",
+                    "13",
+                    "12"
                 ]
             },
             "generation": {
                 "context_chunks": [
                     "3",
-                    "21",
+                    "25",
+                    "34",
                     "17",
-                    "14",
-                    "24"
+                    "20"
                 ],
-                "answer": "I don't have enough information in the provided documents.  \n\nSources: 1"
+                "answer": "Yes – the note about documenting the backup‑restore process was added to the backlog for future work. [1]  \n\nSources: [1]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "The answer correctly states that the provided documents do not contain information about whether the effort to document restore steps resulted in any outcome."
+                "reason": "The answer correctly states that the note about documenting the backup‑restore process was added to the backlog, which is directly supported by source [1]."
             }
         },
         {
@@ -288,52 +206,36 @@
             "relevant_chunks": [
                 "4"
             ],
-            "hybrid": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "4",
-                    "6",
-                    "24",
-                    "2",
-                    "25",
-                    "7",
-                    "5",
-                    "21",
-                    "12",
-                    "3"
-                ]
-            },
-            "hybrid_reranker": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
                     "4",
                     "7",
+                    "28",
                     "14",
-                    "21",
                     "3",
+                    "25",
+                    "26",
                     "2",
-                    "6",
-                    "24",
-                    "20",
-                    "23"
+                    "37",
+                    "39"
                 ]
             },
             "generation": {
                 "context_chunks": [
                     "4",
                     "7",
+                    "28",
                     "14",
-                    "21",
                     "3"
                 ],
-                "answer": "The customer hit the 500‑event batch limit, which caused some data to be lost because the error message was not clear enough about the ceiling. This was noted in the escalation from Brightfield Analytics and the API documentation lists the 413 error for batches exceeding 500 events or 1 MB payload. [1][3]"
+                "answer": "The customer lost data because they hit the 500‑event batch limit, which caused some events to be dropped. This was noted in the escalation from Brightfield Analytics, and an error message was added to make the limit clearer. [1]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "All factual claims are directly supported by the provided context."
+                "reason": "All claims are directly supported by the provided context."
             }
         },
         {
@@ -342,186 +244,125 @@
             "relevant_chunks": [
                 "5"
             ],
-            "hybrid": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "4",
-                    "25",
-                    "5",
-                    "6",
-                    "22",
-                    "24",
-                    "2",
-                    "13",
-                    "9",
-                    "17"
-                ]
-            },
-            "hybrid_reranker": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
                     "5",
                     "4",
-                    "22",
-                    "24",
+                    "36",
                     "6",
-                    "25",
-                    "13",
-                    "23",
-                    "10",
-                    "8"
+                    "37",
+                    "42",
+                    "32",
+                    "30",
+                    "33",
+                    "43"
                 ]
             },
             "generation": {
                 "context_chunks": [
                     "5",
                     "4",
-                    "22",
-                    "24",
-                    "6"
+                    "36",
+                    "6",
+                    "37"
                 ],
-                "answer": "Yes. The IR team is asking for headcount numbers for the Q3 report for Brightfield, which is due at the end of the month.  \n\nSources: [1]"
+                "answer": "Yes. The Q3 report for Brightfield is due at the end of the month, and the IR team is asking for headcount numbers for that report. [1]  \n\nSources: [1]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "The answer correctly states that the IR team is requesting headcount numbers for the Q3 Brightfield report due end of month, which directly supports the claim that finance will need staffing numbers soon."
+                "reason": "The answer correctly states that the IR team is asking for headcount numbers for the Q3 Brightfield report, which is due soon, as supported by source [1]."
             }
         },
         {
             "id": "q08",
             "question": "Are we planning to drop support for the community-contributed language libraries?",
             "relevant_chunks": [
-                "5"
+                "5",
+                "15"
             ],
-            "hybrid": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
-                    "16",
-                    "5",
-                    "1",
-                    "6",
-                    "2",
-                    "19",
-                    "3",
-                    "25",
-                    "4",
-                    "22"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
+                    "15",
                     "5",
                     "2",
                     "1",
                     "7",
                     "6",
-                    "21",
                     "14",
-                    "19",
+                    "20",
                     "3",
-                    "13"
+                    "25"
                 ]
             },
             "generation": {
                 "context_chunks": [
+                    "15",
                     "5",
                     "2",
                     "1",
-                    "7",
-                    "6"
+                    "7"
                 ],
-                "answer": "No. The team discussed possibly sunsetting the community‑contributed Go, Ruby, and Java SDKs, but the current stance is to keep them and add a warning banner, with a revisit planned for Q4. [1]  \n\nSources: [1]"
+                "answer": "Yes, the team is leaning toward keeping the community‑maintained Go, Ruby, and Java SDKs but plans to add a warning banner and revisit the decision in Q4. [2]  \n\nSources: [2]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "All claims in the answer are directly supported by the retrieved context."
+                "reason": "The answer accurately reflects the information in source [2] about keeping the community SDKs with a warning banner and revisiting in Q4."
             }
         },
         {
             "id": "q09",
             "question": "If we onboard a much bigger enterprise client, would our current throughput ceiling be a problem?",
             "relevant_chunks": [
-                "6"
+                "6",
+                "13"
             ],
-            "hybrid": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "13",
-                    "6",
-                    "25",
-                    "9",
-                    "24",
-                    "5",
-                    "3",
-                    "2",
-                    "16",
-                    "7"
-                ]
-            },
-            "hybrid_reranker": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
                     "6",
-                    "24",
-                    "25",
+                    "39",
+                    "41",
+                    "37",
                     "13",
+                    "40",
                     "7",
                     "12",
                     "2",
-                    "10",
-                    "14",
-                    "16"
+                    "43"
                 ]
             },
             "generation": {
                 "context_chunks": [
                     "6",
-                    "24",
-                    "25",
-                    "13",
-                    "7"
+                    "39",
+                    "41",
+                    "37",
+                    "13"
                 ],
-                "answer": "The current rate‑limit ceiling for the Enterprise tier is 500 requests per second (with a burst allowance of 1,000). If a larger enterprise client requires a higher sustained throughput than this, the existing limit could become a bottleneck.  \n\nSources: [4]"
+                "answer": "The Enterprise plan’s current throughput ceiling is 500 requests per second, with a burst capacity of 1,000 requests. If a larger enterprise client requires sustained traffic above this limit, the existing ceiling could become a bottleneck, potentially leading to 429 “Too Many Requests” responses and the need for client‑side batching or a higher‑tier plan.  \n\nSources: [5]"
             },
             "faithfulness": {
-                "faithful": false,
-                "score": 0.5,
-                "reason": "The answer correctly cites the 500 req/s limit from source [4], but the claim that a larger client would face a bottleneck is an inference not directly supported by the provided context."
+                "faithful": true,
+                "score": 1.0,
+                "reason": "The answer correctly cites the Enterprise plan limits from source [5] and appropriately states that exceeding these limits could cause issues, which is fully supported by the provided context."
             }
         },
         {
             "id": "q10",
             "question": "Is it safe for developers to run ingest API tests against the live environment right now?",
             "relevant_chunks": [
-                "6"
+                "6",
+                "9"
             ],
-            "hybrid": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "8",
-                    "2",
-                    "6",
-                    "21",
-                    "18",
-                    "14",
-                    "9",
-                    "7",
-                    "16",
-                    "12"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 1.0,
+            "multi_query": {
+                "recall_at_5": 0.5,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
                     "2",
@@ -549,7 +390,7 @@
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "The answer correctly states that there is insufficient information in the provided context to determine safety, which is supported by the absence of any relevant detail."
+                "reason": "The answer correctly states that the provided documents do not contain information about whether it is safe to run ingest API tests against the live environment, which is supported by the context."
             }
         },
         {
@@ -558,36 +399,20 @@
             "relevant_chunks": [
                 "6"
             ],
-            "hybrid": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
                     "6",
                     "5",
                     "1",
-                    "23",
-                    "7",
-                    "10",
-                    "9",
-                    "22",
-                    "12",
-                    "21"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "6",
-                    "5",
-                    "1",
-                    "22",
-                    "16",
-                    "24",
+                    "30",
+                    "37",
                     "25",
-                    "17",
-                    "10",
-                    "12"
+                    "21",
+                    "16",
+                    "41",
+                    "20"
                 ]
             },
             "generation": {
@@ -595,53 +420,38 @@
                     "6",
                     "5",
                     "1",
-                    "22",
-                    "16"
+                    "30",
+                    "37"
                 ],
-                "answer": "Raj is covering on‑call duties while the team member is away next week. [1]"
+                "answer": "Raj is covering on‑call duties while a team member is away next week. [1]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "The answer correctly states that Raj is covering on‑call duties while the team member is away next week, which is directly supported by the retrieved context."
+                "reason": "The answer correctly states that Raj is covering on‑call duties while a team member (dev) is away next week, which is directly supported by the provided context."
             }
         },
         {
             "id": "q12",
             "question": "Has the outreach to customers still relying on the legacy integration actually gone out yet?",
             "relevant_chunks": [
+                "2",
                 "7"
             ],
-            "hybrid": {
-                "recall_at_5": 0.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "2",
-                    "16",
-                    "6",
-                    "5",
-                    "3",
-                    "11",
-                    "4",
-                    "7",
-                    "9",
-                    "21"
-                ]
-            },
-            "hybrid_reranker": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
                     "2",
                     "7",
                     "6",
-                    "25",
+                    "39",
+                    "42",
                     "5",
+                    "29",
+                    "37",
                     "10",
-                    "17",
-                    "8",
-                    "12",
-                    "18"
+                    "17"
                 ]
             },
             "generation": {
@@ -649,15 +459,15 @@
                     "2",
                     "7",
                     "6",
-                    "25",
-                    "5"
+                    "39",
+                    "42"
                 ],
-                "answer": "No, the outreach to customers still relying on the legacy integration has not yet been sent. The action item for the developer to email the top 12 customers was still pending as of the latest notes.  \n\nSources: [1], [2]"
+                "answer": "No – the email outreach to the customers still using the legacy integration has not yet been sent. The action item for the developer to email the top 12 customers was noted as still pending in the notes.  \n\nSources: [1], [2]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "All claims are directly supported by the provided context."
+                "reason": "The answer correctly states that the outreach has not yet been sent, which is supported by the action items in the provided context."
             }
         },
         {
@@ -666,23 +476,7 @@
             "relevant_chunks": [
                 "8"
             ],
-            "hybrid": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "13",
-                    "9",
-                    "8",
-                    "10",
-                    "4",
-                    "21",
-                    "5",
-                    "16",
-                    "19",
-                    "2"
-                ]
-            },
-            "hybrid_reranker": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
@@ -695,7 +489,7 @@
                     "16",
                     "10",
                     "4",
-                    "2"
+                    "11"
                 ]
             },
             "generation": {
@@ -711,7 +505,7 @@
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "All factual claims are directly supported by the provided context."
+                "reason": "All claims are directly supported by the provided context."
             }
         },
         {
@@ -720,23 +514,7 @@
             "relevant_chunks": [
                 "9"
             ],
-            "hybrid": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "4",
-                    "3",
-                    "17",
-                    "6",
-                    "9",
-                    "16",
-                    "14",
-                    "7",
-                    "10",
-                    "2"
-                ]
-            },
-            "hybrid_reranker": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
@@ -745,11 +523,11 @@
                     "6",
                     "14",
                     "7",
+                    "33",
                     "4",
                     "2",
                     "17",
-                    "8",
-                    "18"
+                    "25"
                 ]
             },
             "generation": {
@@ -765,7 +543,7 @@
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "All claims are directly supported by the retrieved context."
+                "reason": "The answer correctly states that test-mode API keys prefixed with `bf_test_` write to a sandbox dataset cleared every 24 hours, which is directly supported by the provided context."
             }
         },
         {
@@ -774,23 +552,7 @@
             "relevant_chunks": [
                 "10"
             ],
-            "hybrid": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "10",
-                    "9",
-                    "11",
-                    "22",
-                    "5",
-                    "4",
-                    "12",
-                    "16",
-                    "3",
-                    "1"
-                ]
-            },
-            "hybrid_reranker": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
@@ -800,10 +562,10 @@
                     "17",
                     "1",
                     "14",
+                    "43",
                     "4",
                     "6",
-                    "12",
-                    "9"
+                    "12"
                 ]
             },
             "generation": {
@@ -819,7 +581,7 @@
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "All claims are directly supported by the retrieved context."
+                "reason": "All claims are directly supported by the provided context."
             }
         },
         {
@@ -828,34 +590,18 @@
             "relevant_chunks": [
                 "11"
             ],
-            "hybrid": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "10",
-                    "12",
-                    "11",
-                    "17",
-                    "23",
-                    "6",
-                    "5",
-                    "7",
-                    "9",
-                    "16"
-                ]
-            },
-            "hybrid_reranker": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
                     "11",
+                    "13",
                     "10",
                     "17",
                     "12",
                     "9",
                     "8",
                     "14",
-                    "23",
                     "16",
                     "4"
                 ]
@@ -863,43 +609,28 @@
             "generation": {
                 "context_chunks": [
                     "11",
+                    "13",
                     "10",
                     "17",
-                    "12",
-                    "9"
+                    "12"
                 ],
-                "answer": "After you send an event, it is not immediately available for querying. The event is processed asynchronously and is typically available within about 30 seconds. [1]  \n\nSources: [1]"
+                "answer": "After you send an event, it is not immediately available for querying. The event is processed asynchronously and you should confirm its ingestion using the Query API, which typically takes up to about 30 seconds. [1]  \n\nSources: [1]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "All claims are directly supported by the provided context."
+                "reason": "The answer accurately reflects the information in the provided context: events are processed asynchronously and typically available within 30 seconds, as stated in source [1]."
             }
         },
         {
             "id": "q17",
             "question": "If my events keep getting rejected for reasons I don't understand, is there a way to check what format is expected?",
             "relevant_chunks": [
+                "11",
                 "12"
             ],
-            "hybrid": {
-                "recall_at_5": 0.0,
-                "recall_at_10": 0.0,
-                "retrieved_chunks": [
-                    "4",
-                    "10",
-                    "16",
-                    "18",
-                    "11",
-                    "14",
-                    "17",
-                    "5",
-                    "3",
-                    "9"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 1.0,
+            "multi_query": {
+                "recall_at_5": 0.5,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
                     "14",
@@ -908,7 +639,7 @@
                     "10",
                     "13",
                     "11",
-                    "23",
+                    "35",
                     "9",
                     "17",
                     "4"
@@ -922,12 +653,12 @@
                     "10",
                     "13"
                 ],
-                "answer": "You can inspect the inferred schema for your workspace’s event stream, which shows the expected format and field types. Hit the endpoint that returns the inferred schema (no request body needed, just your API key) to see what the system expects for each event.  \n\nSources: [3]"
+                "answer": "You can inspect the schema that the API expects by calling the endpoint that returns the inferred schema for your workspace’s event stream. This endpoint requires no request body and will show the field names and types that are currently accepted, helping you verify that your event payload matches the expected format.  \n\nSources: [3]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "The answer correctly cites the inferred schema endpoint described in source [3] as a way to check expected format."
+                "reason": "The answer correctly cites the inferred schema endpoint described in source [3], which states it requires no request body and is useful for debugging type mismatches. No unsupported claims are made."
             }
         },
         {
@@ -936,36 +667,20 @@
             "relevant_chunks": [
                 "12"
             ],
-            "hybrid": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "12",
-                    "10",
-                    "3",
-                    "4",
-                    "16",
-                    "9",
-                    "11",
-                    "6",
-                    "8",
-                    "7"
-                ]
-            },
-            "hybrid_reranker": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
                     "10",
                     "14",
                     "12",
-                    "22",
+                    "31",
                     "7",
+                    "25",
                     "3",
+                    "33",
                     "4",
-                    "21",
-                    "11",
-                    "19"
+                    "34"
                 ]
             },
             "generation": {
@@ -973,15 +688,15 @@
                     "10",
                     "14",
                     "12",
-                    "22",
+                    "31",
                     "7"
                 ],
-                "answer": "You can delete a single event only if you are on an Enterprise plan. The API provides a `DELETE /v2/events/{event_id}` endpoint for that purpose, but it is not available on lower‑tier plans.  \n\nSources: [3]"
+                "answer": "Yes—if you’re on an Enterprise plan you can delete a single event immediately by calling the **DELETE /v2/events/{event_id}** endpoint. This operation is available only to Enterprise customers and will eventually propagate to downstream dashboards within about 15 minutes.  \n\nSources: [3]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "All factual claims in the answer are directly supported by the retrieved context."
+                "reason": "All claims are directly supported by the provided context."
             }
         },
         {
@@ -990,23 +705,7 @@
             "relevant_chunks": [
                 "13"
             ],
-            "hybrid": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "10",
-                    "12",
-                    "5",
-                    "4",
-                    "13",
-                    "16",
-                    "3",
-                    "9",
-                    "7",
-                    "23"
-                ]
-            },
-            "hybrid_reranker": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
@@ -1016,10 +715,10 @@
                     "16",
                     "9",
                     "5",
+                    "24",
                     "1",
                     "7",
-                    "11",
-                    "12"
+                    "11"
                 ]
             },
             "generation": {
@@ -1035,7 +734,7 @@
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "All claims are directly supported by the provided context."
+                "reason": "The answer correctly cites the recommendation for client‑side batching from the provided context."
             }
         },
         {
@@ -1044,52 +743,36 @@
             "relevant_chunks": [
                 "14"
             ],
-            "hybrid": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "7",
-                    "14",
-                    "16",
-                    "3",
-                    "13",
-                    "12",
-                    "11",
-                    "10",
-                    "9",
-                    "6"
-                ]
-            },
-            "hybrid_reranker": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
                     "13",
+                    "24",
                     "9",
                     "14",
+                    "27",
                     "12",
-                    "20",
                     "11",
                     "6",
                     "3",
-                    "22",
-                    "21"
+                    "7"
                 ]
             },
             "generation": {
                 "context_chunks": [
                     "13",
+                    "24",
                     "9",
                     "14",
-                    "12",
-                    "20"
+                    "27"
                 ],
-                "answer": "No. A server‑side error (5xx) is considered transient; you should retry the request with exponential backoff. This is explicitly recommended in the error‑code documentation.  \n\nSources: [3]"
+                "answer": "No. A server‑side error (5xx) is considered transient; you should retry the request with exponential backoff. This is explicitly stated in the error‑code documentation.  \n\nSources: [4]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "The answer correctly states that 5xx errors are safe to retry with exponential backoff, which is directly supported by source [3]."
+                "reason": "The answer correctly states that 5xx errors are safe to retry with exponential backoff, which is directly supported by source [4]."
             }
         },
         {
@@ -1098,52 +781,36 @@
             "relevant_chunks": [
                 "15"
             ],
-            "hybrid": {
-                "recall_at_5": 0.0,
-                "recall_at_10": 0.0,
+            "multi_query": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
                 "retrieved_chunks": [
-                    "16",
-                    "3",
-                    "9",
-                    "17",
-                    "1",
-                    "6",
-                    "22",
-                    "5",
-                    "7",
-                    "11"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 0.0,
-                "recall_at_10": 0.0,
-                "retrieved_chunks": [
+                    "15",
+                    "20",
                     "7",
                     "16",
                     "18",
                     "2",
                     "14",
-                    "19",
                     "6",
-                    "23",
                     "1",
-                    "22"
+                    "5"
                 ]
             },
             "generation": {
                 "context_chunks": [
+                    "15",
+                    "20",
                     "7",
                     "16",
-                    "18",
-                    "2",
-                    "14"
+                    "18"
                 ],
-                "answer": "I don't have enough information in the provided documents.  \n\nSources: None"
+                "answer": "The SDKs for Node.js and Python are the only ones officially supported.  \nOther languages such as Go, Ruby, and Java are community‑maintained and are not officially supported, so you would not receive the same level of support.  \n\nSources: [1]"
             },
             "faithfulness": {
-                "faithful": false,
-                "score": 0.0,
-                "reason": "The answer claims lack of information, but the context does not provide any information about language support, so the claim is unsupported."
+                "faithful": true,
+                "score": 1.0,
+                "reason": "The answer correctly states that only Node.js and Python SDKs are officially supported and that other languages are community-maintained and not officially supported, which is directly supported by the provided context."
             }
         },
         {
@@ -1153,23 +820,7 @@
                 "16",
                 "17"
             ],
-            "hybrid": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "16",
-                    "7",
-                    "9",
-                    "17",
-                    "2",
-                    "21",
-                    "3",
-                    "5",
-                    "10",
-                    "6"
-                ]
-            },
-            "hybrid_reranker": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
@@ -1177,12 +828,12 @@
                     "16",
                     "10",
                     "11",
+                    "25",
                     "7",
-                    "21",
+                    "34",
                     "2",
                     "14",
-                    "6",
-                    "15"
+                    "6"
                 ]
             },
             "generation": {
@@ -1191,14 +842,14 @@
                     "16",
                     "10",
                     "11",
-                    "7"
+                    "25"
                 ],
-                "answer": "No. The v2 endpoint expects an ISO 8601 `timestamp` and a `properties` field instead of the old `props` field. The old Unix‑epoch timestamp and `props` key will not be accepted without modification.  \n\nSources: [1], [3]"
+                "answer": "No. The v2 API expects an ISO 8601 `timestamp` and a `properties` field instead of the old `props` field. The old `/v1/events` endpoint accepted a Unix epoch timestamp and `props`, but v2 no longer supports that format or batching. You’ll need to update your integration code to use `timestamp` in ISO 8601 and `properties` instead of `props`【1】【3】.  \n\nSources: [1], [3]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "All claims are directly supported by the provided context."
+                "reason": "All claims are supported by the provided context."
             }
         },
         {
@@ -1207,23 +858,7 @@
             "relevant_chunks": [
                 "18"
             ],
-            "hybrid": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "16",
-                    "7",
-                    "18",
-                    "3",
-                    "9",
-                    "4",
-                    "14",
-                    "5",
-                    "11",
-                    "2"
-                ]
-            },
-            "hybrid_reranker": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
@@ -1252,380 +887,421 @@
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "The answer directly cites the instruction from source [3] that says to post in #ingest-api-support or email platform-team@brightfieldanalytics.example when the documentation is out of date."
+                "reason": "The answer correctly cites the instruction from source [3] to post in #ingest-api-support or email platform-team@brightfieldanalytics.example when the API reference appears out of date."
             }
         },
         {
             "id": "q24",
             "question": "I want to try this database on my laptop for local development — is that a supported setup?",
             "relevant_chunks": [
-                "19"
+                "20"
             ],
-            "hybrid": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
-                    "19",
-                    "6",
-                    "3",
-                    "2",
-                    "21",
-                    "4",
-                    "9",
-                    "16",
-                    "7",
-                    "5"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "19",
+                    "20",
                     "15",
-                    "21",
+                    "28",
+                    "25",
                     "6",
+                    "21",
                     "9",
+                    "19",
                     "22",
-                    "2",
-                    "14",
-                    "11",
-                    "18"
+                    "2"
                 ]
             },
             "generation": {
                 "context_chunks": [
-                    "19",
+                    "20",
                     "15",
-                    "21",
-                    "6",
-                    "9"
+                    "28",
+                    "25",
+                    "6"
                 ],
-                "answer": "NimbusDB supports macOS for local development only, but it is not recommended for production use. [1]  \n\nSources: [1]"
+                "answer": "Yes—macOS is supported for local development only, though it is not recommended for production use. [1]  \n\nSources: [1]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "The answer accurately reflects the statement in the retrieved context that macOS is supported only for local development and not recommended for production."
+                "reason": "The answer correctly states that macOS is supported for local development only, as directly supported by the provided context."
             }
         },
         {
             "id": "q25",
             "question": "Running the installer inside a container is giving me trouble with system service registration — what should I do?",
             "relevant_chunks": [
-                "19"
+                "21"
             ],
-            "hybrid": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
-                    "3",
-                    "16",
+                    "21",
+                    "26",
                     "19",
                     "14",
-                    "6",
-                    "9",
-                    "21",
-                    "2",
-                    "23",
-                    "5"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "19",
-                    "14",
-                    "21",
                     "9",
                     "3",
+                    "25",
+                    "27",
                     "11",
-                    "6",
-                    "22",
-                    "24",
-                    "10"
+                    "15"
                 ]
             },
             "generation": {
                 "context_chunks": [
+                    "21",
+                    "26",
                     "19",
                     "14",
-                    "21",
-                    "9",
-                    "3"
+                    "9"
                 ],
-                "answer": "Run the installer with the `--no-systemd` flag to skip system‑service registration when installing inside a container. This option prevents the installer from attempting to create the NimbusDB system user and register the systemd service, which is not applicable in a containerized environment. [1]  \n\nSources: [1]"
+                "answer": "Run the installer with the `--no-systemd` flag to skip systemd service registration. This is the recommended approach when installing NimbusDB inside a container.  \n\nSources: [1]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "The answer directly cites the context that specifies using --no-systemd when installing in a container to skip systemd registration."
+                "reason": "The answer correctly states that using --no-systemd skips systemd registration, which is explicitly mentioned in the provided context."
             }
         },
         {
             "id": "q26",
             "question": "For a small production rollout, roughly how much storage and networking headroom should I plan for?",
             "relevant_chunks": [
-                "19"
+                "22"
             ],
-            "hybrid": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
-                    "19",
-                    "3",
-                    "13",
-                    "6",
-                    "22",
-                    "21",
-                    "5",
-                    "24",
-                    "2",
-                    "17"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "19",
-                    "6",
-                    "21",
-                    "2",
-                    "1",
-                    "7",
-                    "3",
                     "22",
                     "24",
-                    "13"
+                    "27",
+                    "32",
+                    "6",
+                    "19",
+                    "2",
+                    "31",
+                    "20",
+                    "3"
                 ]
             },
             "generation": {
                 "context_chunks": [
-                    "19",
-                    "6",
-                    "21",
-                    "2",
-                    "1"
+                    "22",
+                    "24",
+                    "27",
+                    "32",
+                    "6"
                 ],
-                "answer": "For a small production rollout you should plan for roughly **500 GB of SSD storage** and **10 Gbps of network bandwidth** as headroom.  \n\nSources: [1]"
+                "answer": "For a small‑production rollout you should plan for roughly **500 GB of SSD storage** and **10 Gbps of network bandwidth** as baseline headroom.  \n\nSources: [1]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "All factual claims are directly supported by the retrieved context."
+                "reason": "The answer correctly cites the storage and networking values for a small production rollout from the provided context."
             }
         },
         {
             "id": "q27",
             "question": "If we want reads to always reflect the latest confirmed write across replicas, is that already the default behavior?",
             "relevant_chunks": [
-                "20"
+                "24"
             ],
-            "hybrid": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
-                    "21",
-                    "7",
-                    "20",
-                    "9",
-                    "4",
-                    "3",
-                    "16",
-                    "2",
-                    "10",
-                    "18"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "20",
+                    "24",
                     "7",
                     "11",
+                    "27",
                     "17",
-                    "19",
                     "9",
+                    "35",
                     "14",
                     "16",
-                    "23",
-                    "6"
+                    "25"
                 ]
             },
             "generation": {
                 "context_chunks": [
-                    "20",
+                    "24",
                     "7",
                     "11",
-                    "17",
-                    "19"
+                    "27",
+                    "17"
                 ],
-                "answer": "No. The default setting for `cluster.quorum_reads` is `false`, meaning reads do not require a majority acknowledgment and therefore do not guarantee that they always reflect the latest confirmed write across replicas.  \n\nSources: [1]"
+                "answer": "No. The default setting for `cluster.quorum_reads` is `false`, meaning reads do not require a majority acknowledgment and therefore do not guarantee that they always reflect the latest confirmed write across replicas. [1]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "The answer correctly states that the default for cluster.quorum_reads is false, as shown in the provided context, and explains that this means reads do not guarantee the latest write across replicas."
+                "reason": "The answer correctly states that the default for cluster.quorum_reads is false, which is supported by the provided context. No unsupported claims are made."
             }
         },
         {
             "id": "q28",
             "question": "Before restoring a snapshot onto our live production cluster, what's the safest first step?",
             "relevant_chunks": [
-                "21"
+                "25"
             ],
-            "hybrid": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
-                    "21",
-                    "7",
-                    "19",
-                    "3",
-                    "16",
-                    "9",
-                    "2",
-                    "5",
-                    "18",
-                    "6"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "21",
-                    "20",
+                    "25",
+                    "24",
+                    "26",
                     "3",
                     "7",
-                    "19",
-                    "11",
+                    "14",
                     "2",
                     "9",
-                    "6",
-                    "16"
+                    "21",
+                    "22"
                 ]
             },
             "generation": {
                 "context_chunks": [
-                    "21",
-                    "20",
+                    "25",
+                    "24",
+                    "26",
                     "3",
-                    "7",
-                    "19"
+                    "7"
                 ],
-                "answer": "The safest first step is to restore the snapshot to a scratch (non‑production) cluster and verify the data integrity before promoting it to the live production cluster. This prevents accidental overwriting of existing data on the production cluster.  \n\nSources: [1]"
+                "answer": "The safest first step is to restore the snapshot to a scratch (non‑production) cluster and verify data integrity before promoting it to the live production cluster. This prevents accidental overwriting of existing data on the production cluster.  \n\nSources: [1]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "The answer directly quotes the guidance from the retrieved context that advises restoring to a scratch cluster first and verifying data integrity before promoting to production."
+                "reason": "The answer directly cites the warning in source [1] that advises restoring to a scratch cluster first and verifying data integrity before promoting, which is exactly the safest first step requested."
             }
         },
         {
             "id": "q29",
             "question": "Query planning has gotten sluggish lately — is there a quick thing to check before escalating?",
             "relevant_chunks": [
-                "21"
+                "27"
             ],
-            "hybrid": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
-                    "2",
-                    "3",
-                    "5",
-                    "7",
-                    "21",
+                    "27",
+                    "23",
                     "4",
-                    "6",
-                    "19",
-                    "1",
-                    "16"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "19",
-                    "4",
-                    "21",
                     "11",
+                    "8",
+                    "30",
+                    "20",
+                    "37",
                     "10",
-                    "25",
-                    "16",
-                    "22",
-                    "14",
-                    "3"
+                    "42"
                 ]
             },
             "generation": {
                 "context_chunks": [
-                    "19",
+                    "27",
+                    "23",
                     "4",
-                    "21",
                     "11",
-                    "10"
+                    "8"
                 ],
-                "answer": "Run a quick statistics refresh on the affected tables.  \nThe guide lists stale statistics as a common cause of slow query planning and recommends executing  \n\n```\nnimbusctl analyze <table>\n```\n\nto update the planner’s metadata before escalating the issue.  \n\nSources: [3]"
+                "answer": "Check whether the query statistics are stale. Running `nimbusctl analyze <table>` to refresh statistics can quickly resolve slow query planning. [1]  \n\nSources: [1]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "All claims are directly supported by the retrieved context."
+                "reason": "The answer correctly cites the provided context that links slow query planning to stale statistics and the resolution of running `nimbusctl analyze <table>`. No unsupported claims are made."
             }
         },
         {
             "id": "q30",
             "question": "I just started as a contractor — does the standard remote work reimbursement policy cover me?",
             "relevant_chunks": [
-                "22"
+                "30"
             ],
-            "hybrid": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
-                    "22",
-                    "9",
-                    "3",
-                    "23",
-                    "14",
-                    "7",
-                    "4",
-                    "2",
-                    "19",
-                    "6"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "22",
-                    "23",
+                    "30",
+                    "29",
+                    "33",
+                    "32",
+                    "31",
                     "6",
+                    "34",
                     "9",
                     "1",
-                    "10",
-                    "14",
-                    "16",
-                    "18",
-                    "21"
+                    "8"
                 ]
             },
             "generation": {
                 "context_chunks": [
-                    "22",
-                    "23",
-                    "6",
-                    "9",
-                    "1"
+                    "30",
+                    "29",
+                    "33",
+                    "32",
+                    "31"
                 ],
-                "answer": "The standard remote work reimbursement policy does not apply to contractors. The policy explicitly states that it is for full‑time employees classified as remote or hybrid and that contractors are not covered unless otherwise stated in their individual agreements. [1]"
+                "answer": "No. The remote work reimbursement policy applies only to full‑time employees. Contractors are excluded unless their individual agreement explicitly states otherwise. [1] [2]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "The answer correctly states that the policy applies only to full‑time employees and excludes contractors unless specified otherwise, which is directly supported by the provided context."
+            }
+        },
+        {
+            "id": "q31",
+            "question": "It's been a couple months since I started and I haven't submitted anything for my desk setup yet — am I too late?",
+            "relevant_chunks": [
+                "31"
+            ],
+            "multi_query": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "2",
+                    "32",
+                    "33",
+                    "7",
+                    "31",
+                    "34",
+                    "3",
+                    "27",
+                    "6",
+                    "25"
+                ]
+            },
+            "generation": {
+                "context_chunks": [
+                    "2",
+                    "32",
+                    "33",
+                    "7",
+                    "31"
+                ],
+                "answer": "You’re past the deadline. The one‑time $500 desk‑setup stipend must be claimed within 90 days of your start date, after which it expires and no extensions are granted except with VP approval. [5]  \n\nSources: [5]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "The answer correctly states that the stipend must be claimed within 90 days and that it expires thereafter, which is directly supported by source [5]."
+            }
+        },
+        {
+            "id": "q32",
+            "question": "I need to travel to headquarters for an in-person meeting — what kind of hotel budget am I working with if it's not a major city?",
+            "relevant_chunks": [
+                "33"
+            ],
+            "multi_query": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "33",
+                    "32",
+                    "29",
+                    "38",
+                    "30",
+                    "6",
+                    "31",
+                    "13",
+                    "3",
+                    "5"
+                ]
+            },
+            "generation": {
+                "context_chunks": [
+                    "33",
+                    "32",
+                    "29",
+                    "38",
+                    "30"
+                ],
+                "answer": "The policy allows reimbursement for standard hotel rooms at up to **$160 per night** in locations that are not major metropolitan areas. [1]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "The answer correctly cites the $160/night limit for non‑major metro areas, which is directly stated in the provided context."
+            }
+        },
+        {
+            "id": "q33",
+            "question": "My laptop's screen is too small and I want a second monitor — how do I actually get one?",
+            "relevant_chunks": [
+                "34"
+            ],
+            "multi_query": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "34",
+                    "6",
+                    "22",
+                    "21",
+                    "26",
+                    "10",
+                    "33",
+                    "4",
+                    "42",
+                    "5"
+                ]
+            },
+            "generation": {
+                "context_chunks": [
+                    "34",
+                    "6",
+                    "22",
+                    "21",
+                    "26"
+                ],
+                "answer": "To obtain a second monitor, file a request through the IT Helpdesk. Approval typically takes 2‑3 business days. Once approved, the monitor will be provided and you can set it up.  \n\nSources: [1]"
+            },
+            "faithfulness": {
+                "faithful": true,
+                "score": 1.0,
+                "reason": "The answer accurately reflects the information in the provided context."
+            }
+        },
+        {
+            "id": "q34",
+            "question": "Investors want to know if the company burned through cash or built up its reserves this quarter — what's the story?",
+            "relevant_chunks": [
+                "37",
+                "38"
+            ],
+            "multi_query": {
+                "recall_at_5": 1.0,
+                "recall_at_10": 1.0,
+                "retrieved_chunks": [
+                    "43",
+                    "37",
+                    "38",
+                    "42",
+                    "41",
+                    "36",
+                    "5",
+                    "11",
+                    "40",
+                    "4"
+                ]
+            },
+            "generation": {
+                "context_chunks": [
+                    "43",
+                    "37",
+                    "38",
+                    "42",
+                    "41"
+                ],
+                "answer": "The company added cash during the quarter, increasing its cash and equivalents from $96.4 million at the end of Q3 2024 to $112.0 million at the end of Q3 2025—a 16 % rise and a net build‑up of roughly $15.6 million. This indicates that the company did not burn through cash but instead strengthened its reserves.  \n\nSources: [2], [3]"
             },
             "faithfulness": {
                 "faithful": true,
@@ -1634,381 +1310,118 @@
             }
         },
         {
-            "id": "q31",
-            "question": "It's been a couple months since I started and I haven't submitted anything for my desk setup yet — am I too late?",
-            "relevant_chunks": [
-                "22"
-            ],
-            "hybrid": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "3",
-                    "2",
-                    "22",
-                    "23",
-                    "19",
-                    "13",
-                    "6",
-                    "4",
-                    "9",
-                    "21"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "22",
-                    "2",
-                    "7",
-                    "23",
-                    "3",
-                    "6",
-                    "21",
-                    "14",
-                    "9",
-                    "12"
-                ]
-            },
-            "generation": {
-                "context_chunks": [
-                    "22",
-                    "2",
-                    "7",
-                    "23",
-                    "3"
-                ],
-                "answer": "You must claim the one‑time $500 desk/chair stipend within 90 days of your start date; after that it expires and no reimbursement will be issued. If you are still within that 90‑day window you can submit the claim, otherwise you are too late.  \n\nSources: [1]"
-            },
-            "faithfulness": {
-                "faithful": true,
-                "score": 1.0,
-                "reason": "All factual claims in the answer are directly supported by the retrieved context."
-            }
-        },
-        {
-            "id": "q32",
-            "question": "I need to travel to headquarters for an in-person meeting — what kind of hotel budget am I working with if it's not a major city?",
-            "relevant_chunks": [
-                "22"
-            ],
-            "hybrid": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "22",
-                    "4",
-                    "5",
-                    "10",
-                    "3",
-                    "16",
-                    "2",
-                    "6",
-                    "25",
-                    "11"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "22",
-                    "6",
-                    "23",
-                    "13",
-                    "3",
-                    "5",
-                    "8",
-                    "16",
-                    "19",
-                    "9"
-                ]
-            },
-            "generation": {
-                "context_chunks": [
-                    "22",
-                    "6",
-                    "23",
-                    "13",
-                    "3"
-                ],
-                "answer": "For a non‑major city, the policy allows reimbursement for a standard hotel room up to **$160 per night**.  \n\nSources: [1]"
-            },
-            "faithfulness": {
-                "faithful": true,
-                "score": 1.0,
-                "reason": "The answer correctly cites the policy’s stated hotel reimbursement limits: $220/night in major metros and $160/night elsewhere, matching the claim for a non‑major city."
-            }
-        },
-        {
-            "id": "q33",
-            "question": "My laptop's screen is too small and I want a second monitor — how do I actually get one?",
-            "relevant_chunks": [
-                "23"
-            ],
-            "hybrid": {
-                "recall_at_5": 0.0,
-                "recall_at_10": 0.0,
-                "retrieved_chunks": [
-                    "3",
-                    "6",
-                    "16",
-                    "2",
-                    "19",
-                    "13",
-                    "22",
-                    "5",
-                    "18",
-                    "9"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 0.0,
-                "recall_at_10": 0.0,
-                "retrieved_chunks": [
-                    "22",
-                    "6",
-                    "10",
-                    "4",
-                    "5",
-                    "25",
-                    "1",
-                    "18",
-                    "13",
-                    "16"
-                ]
-            },
-            "generation": {
-                "context_chunks": [
-                    "22",
-                    "6",
-                    "10",
-                    "4",
-                    "5"
-                ],
-                "answer": "To get a second monitor, file a request through the company’s IT system (or IT help‑desk) for the additional equipment. This is the procedure outlined in the Remote Work & Expense Policy.  \n\nSources: [1]"
-            },
-            "faithfulness": {
-                "faithful": true,
-                "score": 1.0,
-                "reason": "The answer correctly states that employees needing a second monitor should file a request through IT, which is directly supported by the policy text in source [1]."
-            }
-        },
-        {
-            "id": "q34",
-            "question": "Investors want to know if the company burned through cash or built up its reserves this quarter — what's the story?",
-            "relevant_chunks": [
-                "24"
-            ],
-            "hybrid": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "24",
-                    "25",
-                    "4",
-                    "5",
-                    "10",
-                    "23",
-                    "3",
-                    "18",
-                    "2",
-                    "11"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "24",
-                    "25",
-                    "5",
-                    "11",
-                    "4",
-                    "6",
-                    "19",
-                    "9",
-                    "10",
-                    "16"
-                ]
-            },
-            "generation": {
-                "context_chunks": [
-                    "24",
-                    "25",
-                    "5",
-                    "11",
-                    "4"
-                ],
-                "answer": "Brightfield Analytics ended Q3 2025 with $112 million in cash and equivalents, up 16 % from the $96.4 million reported at the end of Q2 2025. This increase indicates that the company built up its cash reserves rather than burning through cash during the quarter.  \n\nSources: [1]"
-            },
-            "faithfulness": {
-                "faithful": false,
-                "score": 0.5,
-                "reason": "The answer correctly states the cash balance for Q3 2025 and the increase percentage, but it incorrectly references the prior period as Q2 2025 instead of Q3 2024, which is what the context provides."
-            }
-        },
-        {
             "id": "q35",
             "question": "Which part of the business is actually carrying the company's growth right now?",
             "relevant_chunks": [
-                "24"
+                "39",
+                "40"
             ],
-            "hybrid": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
-                    "24",
-                    "25",
-                    "23",
-                    "5",
-                    "2",
-                    "4",
+                    "39",
+                    "37",
+                    "36",
                     "6",
-                    "19",
-                    "8",
-                    "10"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "24",
-                    "6",
-                    "22",
-                    "25",
+                    "40",
                     "4",
+                    "41",
                     "2",
-                    "13",
-                    "5",
-                    "7",
-                    "23"
+                    "38",
+                    "33"
                 ]
             },
             "generation": {
                 "context_chunks": [
-                    "24",
+                    "39",
+                    "37",
+                    "36",
                     "6",
-                    "22",
-                    "25",
-                    "4"
+                    "40"
                 ],
-                "answer": "The growth is being driven by the **Enterprise Data Platform** segment, which contributed $31.4 M of quarterly revenue—65 % of total revenue and up 4 % QoQ.  \n\nSources: [1]"
+                "answer": "The Enterprise Data Platform segment is the primary driver of the company’s growth, contributing $31.4 million of quarterly revenue (65 % of total) and showing a 4 % QoQ increase.  \n\nSources: [1], [5]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "All factual claims are directly supported by the provided context."
+                "reason": "All claims are directly supported by the provided context."
             }
         },
         {
             "id": "q36",
             "question": "Should shareholders be worried that deals might start taking longer to close?",
             "relevant_chunks": [
-                "25"
+                "41"
             ],
-            "hybrid": {
+            "multi_query": {
                 "recall_at_5": 1.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
-                    "25",
-                    "4",
-                    "3",
-                    "2",
-                    "22",
-                    "23",
-                    "5",
-                    "24",
-                    "11",
-                    "7"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "24",
-                    "25",
+                    "41",
+                    "36",
+                    "43",
+                    "37",
                     "6",
                     "5",
-                    "22",
-                    "14",
-                    "21",
                     "9",
-                    "12",
-                    "11"
+                    "18",
+                    "25",
+                    "12"
                 ]
             },
             "generation": {
                 "context_chunks": [
-                    "24",
-                    "25",
-                    "6",
-                    "5",
-                    "22"
+                    "41",
+                    "36",
+                    "43",
+                    "37",
+                    "6"
                 ],
-                "answer": "Yes.  Management notes that macro‑economic uncertainty could lengthen average deal times in Q4, which may affect the timing of revenue recognition and pipeline conversion.  This is highlighted as a risk factor in the Q3 report.  [2]  \n\nSources: [2]"
+                "answer": "Shareholders should be aware that macro‑economic uncertainty is expected to lengthen average deal times in Q4, which could delay the conversion of the pipeline into revenue. This is noted in the management notes.  \n\nSources: [1]"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "All factual claims are directly supported by the retrieved context."
+                "reason": "The answer accurately reflects the information in source [1] and does not add unsupported claims."
             }
         },
         {
             "id": "q37",
             "question": "Did the company grow its workforce this quarter, and where was most of that growth concentrated?",
             "relevant_chunks": [
-                "25"
+                "42"
             ],
-            "hybrid": {
-                "recall_at_5": 1.0,
+            "multi_query": {
+                "recall_at_5": 0.0,
                 "recall_at_10": 1.0,
                 "retrieved_chunks": [
-                    "4",
-                    "24",
-                    "25",
-                    "16",
-                    "7",
-                    "23",
-                    "22",
-                    "5",
-                    "13",
-                    "2"
-                ]
-            },
-            "hybrid_reranker": {
-                "recall_at_5": 1.0,
-                "recall_at_10": 1.0,
-                "retrieved_chunks": [
-                    "24",
-                    "25",
+                    "39",
+                    "37",
+                    "40",
+                    "36",
+                    "38",
+                    "41",
+                    "42",
                     "6",
                     "4",
-                    "5",
-                    "22",
-                    "23",
-                    "13",
-                    "11",
-                    "7"
+                    "5"
                 ]
             },
             "generation": {
                 "context_chunks": [
-                    "24",
-                    "25",
-                    "6",
-                    "4",
-                    "5"
+                    "39",
+                    "37",
+                    "40",
+                    "36",
+                    "38"
                 ],
-                "answer": "Yes. Brightfield Analytics increased its workforce from 388 employees in Q2 2025 to 412 at the end of Q3 2025, a net addition of 24 people. The majority of those new hires were in Engineering and Product functions, reflecting continued investment in platform reliability and new data‑connector integrations. [2]  \n\nSources: [2]"
+                "answer": "I don't have enough information in the provided documents.  \n\nSources: None"
             },
             "faithfulness": {
                 "faithful": true,
                 "score": 1.0,
-                "reason": "All factual claims are directly supported by the retrieved context."
+                "reason": "The answer correctly states that the provided documents do not contain information about workforce growth, which is supported by the absence of any workforce data in the context."
             }
         }
     ]
